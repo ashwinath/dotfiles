@@ -7,7 +7,7 @@ xcode-select --install;
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
 
 # Misc stuff
-brew install ctags the_silver_searcher fzf neovim zsh;
+brew install ctags the_silver_searcher fzf neovim zsh cmake;
 
 # Chunkwm
 brew tap crisidev/homebrew-chunkwm;
