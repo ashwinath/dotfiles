@@ -25,3 +25,9 @@ cat .zshrc >> ~/.zshrc;
 # Start chunkwm
 brew services start crisidev/chunkwm/chunkwm;
 
+# install YouCompleteMe
+curr_dir=`pwd`
+cd ~/.vim/bundle/YouCompleteMe;
+./install.py;
+cd $pwd
+
