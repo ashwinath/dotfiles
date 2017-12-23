@@ -6,6 +6,10 @@
 echo 'Setting up configuration';
 xcode-select --install;
 
+# git user
+git config --global user.email "ashwinath@hotmail.com";
+git config --global user.name "ashwinath";
+
 # Oh My Zsh. Gonna make me a 10x developer just by installing this.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
 
