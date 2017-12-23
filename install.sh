@@ -7,11 +7,11 @@ xcode-select --install;
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
 
 # Misc stuff
-brew install ctags the_silver_searcher fzf neovim zsh cmake;
+brew install ctags the_silver_searcher fzf neovim zsh cmake python python3;
 
 # Chunkwm
 brew tap crisidev/homebrew-chunkwm;
-brew install chunkwm
+brew install chunkwm;
 
 # Oh My Zsh. Gonna make me a 10x developer just by installing this.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
@@ -26,8 +26,10 @@ cat .zshrc >> ~/.zshrc;
 brew services start crisidev/chunkwm/chunkwm;
 
 # install YouCompleteMe
-curr_dir=`pwd`
+curr_dir=`pwd`;
 cd ~/.vim/bundle/YouCompleteMe;
 ./install.py;
-cd $pwd
+cd $pwd;
 
+# YouCompleteMe Dependencies
+pip3 install neovim;
