@@ -1,0 +1,107 @@
+
+n settings #####
+#
+mpd_host = localhost
+
+mpd_port = 6600
+
+mpd_connection_timeout = 5
+mpd_music_dir = ~/Music
+
+external_editor = vim
+
+# NCMPCPP Config
+mpd_crossfade_time = "3"
+
+# Song Format
+song_list_format = "{$3[%l]$9} $1|$9 %a - %t $1|$9 {$3%y$9} $R {$6%b$9}"
+song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t} (30)[green]{b}"
+selected_item_prefix = "$6"
+selected_item_suffix = "$9"
+
+# # Misc
+titles_visibility="yes"
+browser_display_mode = "columns"
+incremental_seeking = "yes"
+autocenter_mode = "yes"
+header_visibility = "yes"
+statusbar_visibility = "yes"
+cyclic_scrolling = "yes"
+display_bitrate= "yes"
+enable_window_title = "yes"
+progressbar_look = "··-"
+
+# Colors
+colors_enabled = "yes"
+header_window_color = 3
+display_volume_level="yes"
+main_window_color = "white"
+statusbar_color = 3
+
+##### music visualizer #####
+##
+## Note: In order to make music visualizer work you'll
+## need to use mpd fifo output, whose format parameter
+## has to be set to 44100:16:1 for mono visualization
+## or 44100:16:2 for stereo visualization. Example
+## configuration (it has to be put into mpd.conf):
+##
+## audio_output {
+##        type            "fifo"
+##        name            "Visualizer feed"
+##        path            "/tmp/mpd.fifo"
+##        format          "44100:16:2"
+## }
+##
+#
+#visualizer_fifo_path = /tmp/mpd.fifo
+#
+##
+## Note: Below parameter is needed for ncmpcpp
+## to determine which output provides data for
+## visualizer and thus allow syncing between
+## visualization and sound as currently there
+## are some problems with it.
+##
+#
+#visualizer_output_name = Visualizer feed
+#
+##
+## If you set format to 44100:16:2, make it 'yes'.
+##
+#visualizer_in_stereo = yes
+#
+##
+## Multiply received samples by given value. Very
+## useful for proper visualization of quiet music.
+##
+#visualizer_sample_multiplier = 1
+#
+##
+## Note: Below parameter defines how often ncmpcpp
+## has to "synchronize" visualizer and audio outputs.
+## 30 seconds is optimal value, but if you experience
+## synchronization problems, set it to lower value.
+## Keep in mind that sane values start with >=10.
+##
+#
+#visualizer_sync_interval = 30
+#
+##
+## Note: To enable spectrum frequency visualization
+## you need to compile ncmpcpp with fftw3 support.
+##
+#
+## Available values: spectrum, wave, wave_filled, ellipse.
+##
+#visualizer_type = wave
+#
+#visualizer_look = ●▮
+#
+#visualizer_color = blue, cyan, green, yellow, magenta, red
+#
+## Alternative subset of 256 colors for terminals that support it.
+##
+#visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+
+}
