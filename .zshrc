@@ -28,3 +28,5 @@ if _has fzf && _has ag; then
   --color info:108,prompt:109,spinner:108,pointer:168,marker:168
   '
 fi
+
+export EDITOR="/usr/local/bin/nvim"
