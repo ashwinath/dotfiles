@@ -164,6 +164,8 @@ nmap <C-t> :Tags<CR>
 " fuzzy file findef for macos
 if has('macunix')
     set rtp+=/usr/local/opt/fzf
+else
+    set rtp+=~/.fzf
 endif
 let g:fzf_tags_command = 'ctags -R'
 
