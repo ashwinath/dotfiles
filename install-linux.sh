@@ -30,3 +30,7 @@ cd $pwd;
 
 # YouCompleteMe Dependencies
 pip3 install neovim;
+
+# tmux
+cp .tmux/.tmux.conf.local .
+ln -s -f tmux.conf
