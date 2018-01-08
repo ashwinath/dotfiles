@@ -42,6 +42,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
@@ -63,6 +65,7 @@ nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
+nmap <F8> :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""
 """""""""""" VIM SETTINGS """""""""
@@ -164,8 +167,6 @@ nmap <C-t> :Tags<CR>
 " fuzzy file findef for macos
 if has('macunix')
     set rtp+=/usr/local/opt/fzf
-else
-    set rtp+=~/.fzf
 endif
 let g:fzf_tags_command = 'ctags -R'
 
