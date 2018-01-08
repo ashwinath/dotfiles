@@ -43,7 +43,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
@@ -143,7 +142,7 @@ colorscheme afterglow
 "set background=dark
 
 "Snippets
-let g:UltiSnipsExpandTrigger="<C-Space>"
+let g:UltiSnipsExpandTrigger="<F2>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -167,6 +166,8 @@ nmap <C-t> :Tags<CR>
 " fuzzy file findef for macos
 if has('macunix')
     set rtp+=/usr/local/opt/fzf
+else
+    set rtp+=~/.fzf
 endif
 let g:fzf_tags_command = 'ctags -R'
 
