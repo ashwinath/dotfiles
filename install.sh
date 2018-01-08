@@ -37,6 +37,7 @@ cp .chunkwmrc ~/.chunkwmrc;
 cat .zshrc >> ~/.zshrc;
 cp -r .ncmpcpp ~;
 cp -r mopidy ~/.config;
+cp .skhdrc ~/.skhdrc
 
 # Start chunkwm
 brew services start crisidev/chunkwm/chunkwm;
