@@ -17,7 +17,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
 
 # Misc stuff
-brew install ctags the_silver_searcher fzf neovim zsh cmake python python3 ipython ipython3;
+brew install ctags the_silver_searcher fzf neovim zsh cmake python python3 ipython ipython3 koekeishiya/formulae/skhd;
 
 # Chunkwm
 brew tap crisidev/homebrew-chunkwm;
@@ -41,6 +41,9 @@ cp .skhdrc ~/.skhdrc
 
 # Start chunkwm
 brew services start crisidev/chunkwm/chunkwm;
+
+# Start skhd
+brew services start skhd
 
 # Start mpd
 brew services start mopidy
