@@ -1,5 +1,6 @@
 alias vim=nvim
 alias ctags="`brew --prefix`/bin/ctags"
+alias gl='git log --graph --oneline --all --decorate'
 
 _has() {
   return $( whence $1 >/dev/null )
