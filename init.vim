@@ -138,8 +138,7 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme afterglow
-"set background=dark
+colorscheme tender
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<F2>"
