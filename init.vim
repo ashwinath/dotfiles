@@ -123,12 +123,24 @@ set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 set backupdir=~/.vim/backup/
 set directory=~/.vim/backup/
+
 " lightline
 set laststatus=2
 set t_Co=256
 set encoding=utf-8
 let NERDTreeSHowHidden=1
 set wrap
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 " let me use the damn mouse to resize windows
 set mouse=a
