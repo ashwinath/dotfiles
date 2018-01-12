@@ -43,6 +43,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'majutsushi/tagbar'
+Plugin 'machakann/vim-highlightedyank'
 
 call vundle#end()
 
@@ -197,6 +198,7 @@ let g:ale_fixers = {
 
 set tags=./tags,tags;$HOME
 nmap <F8> :TagbarToggle<CR>
+set inccommand=nosplit
 
 """"""""""""""""""""""""""""""""""""""
 """"""""""""""" GVIM """""""""""""""""
