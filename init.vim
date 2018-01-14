@@ -44,6 +44,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'majutsushi/tagbar'
 Plugin 'machakann/vim-highlightedyank'
+Plugin 'ludovicchabant/vim-gutentags'
 
 call vundle#end()
 

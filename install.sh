@@ -17,7 +17,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
 
 # Misc stuff
-brew install ctags the_silver_searcher fzf neovim zsh cmake python python3 ipython ipython3 koekeishiya/formulae/skhd;
+brew install the_silver_searcher fzf neovim zsh cmake python python3 ipython ipython3 koekeishiya/formulae/skhd;
+
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 # Chunkwm
 brew tap crisidev/homebrew-chunkwm;
