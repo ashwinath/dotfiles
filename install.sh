@@ -50,15 +50,6 @@ brew services start skhd
 # Start mpd
 brew services start mopidy
 
-# install YouCompleteMe
-curr_dir=`pwd`;
-cd ~/.vim/bundle/YouCompleteMe;
-./install.py;
-cd $pwd;
-
-# YouCompleteMe Dependencies
-pip3 install neovim;
-
 # tmux
 cp .tmux/.tmux.conf.local .
 ln -s -f tmux.conf
