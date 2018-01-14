@@ -119,8 +119,12 @@ set directory=~/.vim/backup/
 set laststatus=2
 set t_Co=256
 set encoding=utf-8
-let NERDTreeSHowHidden=1
 set wrap
+
+" Nerd tree
+let NERDTreeSHowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',

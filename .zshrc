@@ -31,3 +31,4 @@ if _has fzf && _has ag; then
 fi
 
 export EDITOR="/usr/local/bin/nvim"
+ZSH_THEME="avit"
