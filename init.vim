@@ -1,52 +1,36 @@
-""""""""""""""""""""""""""""""""""""""
-"""""""""""" VUNDLE """"""""""""""""""
-""""""""""""""""""""""""""""""""""""""
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
-if !filereadable(vundle_readme)
-        echo "Installing Vundle.."
-        echo ""
-        silent !mkdir -p ~/.vim/bundle
-        silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-        let iCanHazVundle=0
-endif
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" let Vundle manage Vundle, required
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'itchyny/lightline.vim'
-Plugin 'tomtom/tlib_vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-surround'
-Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'w0rp/ale'
-Plugin 'rafi/awesome-vim-colorschemes'
-Plugin 'tpope/vim-fugitive'
-Plugin 'nikvdp/ejs-syntax'
-Plugin 'mxw/vim-jsx'
-Plugin 'pangloss/vim-javascript'
-Plugin 'shime/vim-livedown'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'junegunn/fzf.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'majutsushi/tagbar'
-Plugin 'machakann/vim-highlightedyank'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'Shougo/deoplete.nvim'
-
-call vundle#end()
+"""""""""""""""""""""""""""""""""""
+"""""""""""" VIM PLUG """""""""""""
+"""""""""""""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/vim-plug'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'tomtom/tlib_vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/nerdcommenter'
+Plug 'w0rp/ale'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'tpope/vim-fugitive'
+Plug 'nikvdp/ejs-syntax'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'shime/vim-livedown'
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'Shougo/vimproc.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'nvie/vim-flake8'
+Plug 'majutsushi/tagbar'
+Plug 'machakann/vim-highlightedyank'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+call plug#end()
 
 """""""""""""""""""""""""""""""""""
 """""""""""" REMAPS """""""""""""""
