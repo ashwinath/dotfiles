@@ -28,7 +28,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'w0rp/ale'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'nikvdp/ejs-syntax'
@@ -45,6 +44,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'majutsushi/tagbar'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'Shougo/deoplete.nvim'
 
 call vundle#end()
 
@@ -68,9 +68,15 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 nmap <F8> :TagbarToggle<CR>
 
+" deoplete tab
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
 """""""""""""""""""""""""""""""""""
 """""""""""" VIM SETTINGS """""""""
 """""""""""""""""""""""""""""""""""
+
+let g:deoplete#enable_at_startup = 1
+
 " .vimrc folding
 augroup filetype_vim
   autocmd FileType vim setlocal foldmethod=marker
