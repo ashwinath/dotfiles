@@ -55,10 +55,21 @@ nmap <F8> :TagbarToggle<CR>
 " deoplete tab
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+" for use with termnal
+if has('nvim')
+    tnoremap <Esc> <C-\><C-n>
+    tnoremap jk <C-\><C-n>
+    tnoremap <C-h> <C-\><C-N><C-w>h
+    tnoremap <C-j> <C-\><C-N><C-w>j
+    tnoremap <C-k> <C-\><C-N><C-w>k
+    tnoremap <C-l> <C-\><C-N><C-w>l
+endif
+
 """""""""""""""""""""""""""""""""""
 """""""""""" VIM SETTINGS """""""""
 """""""""""""""""""""""""""""""""""
 
+set hidden
 let g:deoplete#enable_at_startup = 1
 
 " .vimrc folding
