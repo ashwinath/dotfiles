@@ -37,10 +37,10 @@ call plug#end()
 """""""""""""""""""""""""""""""""""
 let mapleader=","
 inoremap jk <ESC>
-map <C-H> <C-W>h<C-W>_
-map <C-L> <C-W>l<C-W>_
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+map <C-J> <C-W>j
+map <C-K> <C-W>k
 nmap <C-v> :vertical resize +5<cr>
 nmap <leader>p :NERDTreeToggle<cr>
 " Fold with space
@@ -69,6 +69,7 @@ endif
 """""""""""" VIM SETTINGS """""""""
 """""""""""""""""""""""""""""""""""
 
+set diffopt+=vertical
 set hidden
 let g:deoplete#enable_at_startup = 1
 
@@ -88,7 +89,7 @@ set splitright
 set hlsearch
 
 "incremental search
-set incsearch
+"set incsearch
 
 " show line numbers
 set number
