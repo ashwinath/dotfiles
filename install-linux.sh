@@ -26,6 +26,16 @@ mkdir -p ~/.config/nvim/ && cp init.vim ~/.config/nvim/init.vim;
 mkdir -p ~/.vim/backup/;
 cat .zshrc >> ~/.zshrc;
 
-# tmux
-cp .tmux/.tmux.conf.local .
-ln -s -f tmux.conf
+# tmux conf
+curr_dir = `pwd`
+git clone --recursive https://github.com/ashwinath/tmux-config ~/.tmux
+ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
+cd ~/.tmux
+git submodule init
+git submodule update
+cd ~/.tmux/vendor/tmux-mem-cpu-load
+mkdir build; cd build
+cmake ..
+make
+sudo make install
+cd `curr_dir`
