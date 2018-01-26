@@ -24,18 +24,5 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # Copying of rc files
 mkdir -p ~/.config/nvim/ && cp init.vim ~/.config/nvim/init.vim;
 mkdir -p ~/.vim/backup/;
+cp .tmux.conf ~/.tmux.conf
 cat .zshrc >> ~/.zshrc;
-
-# tmux conf
-curr_dir = `pwd`
-git clone --recursive https://github.com/ashwinath/tmux-config ~/.tmux
-ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
-cd ~/.tmux
-git submodule init
-git submodule update
-cd ~/.tmux/vendor/tmux-mem-cpu-load
-mkdir build; cd build
-cmake ..
-make
-sudo make install
-cd `curr_dir`

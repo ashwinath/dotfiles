@@ -44,6 +44,7 @@ cat .zshrc >> ~/.zshrc;
 cp -r .ncmpcpp ~;
 cp -r mopidy ~/.config;
 cp .skhdrc ~/.skhdrc
+cp .tmux.conf ~/.tmux.conf
 
 # Start chunkwm
 brew services start crisidev/chunkwm/chunkwm;
@@ -53,17 +54,3 @@ brew services start skhd
 
 # Start mpd
 brew services start mopidy
-
-# tmux conf
-curr_dir = `pwd`
-git clone --recursive https://github.com/ashwinath/tmux-config ~/.tmux
-ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
-cd ~/.tmux
-git submodule init
-git submodule update
-cd ~/.tmux/vendor/tmux-mem-cpu-load
-mkdir build; cd build
-cmake ..
-make
-sudo make install
-cd `curr_dir`
