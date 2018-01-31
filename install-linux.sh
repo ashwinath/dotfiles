@@ -23,6 +23,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # Copying of rc files
 mkdir -p ~/.config/nvim/ && cp init.vim ~/.config/nvim/init.vim;
+cp -R alacritty ~/.config/alacritty;
 mkdir -p ~/.vim/backup/;
 cp .tmux.conf ~/.tmux.conf
 cat .zshrc >> ~/.zshrc;
