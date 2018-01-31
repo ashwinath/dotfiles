@@ -21,7 +21,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
 
 # Misc stuff
-brew install the_silver_searcher fzf neovim zsh cmake python python3 ipython ipython3 koekeishiya/formulae/skhd;
+brew install the_silver_searcher fzf neovim zsh cmake python python3 ipython ipython3 koekeishiya/formulae/skhd rust;
 
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
@@ -67,4 +67,12 @@ mkdir build; cd build
 cmake ..
 make
 sudo make install
+cd `curr_dir`
+
+# install alacrity
+git clone https://github.com/jwilm/alacritty
+cd alacrity
+cargo build --release
+make app
+cp -r target/release/osx/Alacritty.app /Applications/
 cd `curr_dir`
