@@ -45,6 +45,7 @@ cat .zshrc >> ~/.zshrc;
 cp -r .ncmpcpp ~;
 cp -r mopidy ~/.config;
 cp .skhdrc ~/.skhdrc
+cp .tmux.conf ~/.tmux.conf
 
 # Start chunkwm
 brew services start crisidev/chunkwm/chunkwm;

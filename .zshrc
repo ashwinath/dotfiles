@@ -2,6 +2,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 alias vim=nvim
 alias ctags="`brew --prefix`/bin/ctags"
 alias gl='git log --graph --oneline --all --decorate'
+alias tmux="tmux -u"
 
 _has() {
   return $( whence $1 >/dev/null )

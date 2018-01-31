@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""
 """""""""""" VIM PLUG """""""""""""
 """""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
@@ -30,6 +30,7 @@ Plug 'majutsushi/tagbar'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'drewtempelmeyer/palenight.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -139,7 +140,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'seoul256',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -158,7 +159,8 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme tender
+set background=dark
+colorscheme palenight
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<F2>"
