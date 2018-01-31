@@ -39,7 +39,6 @@ ln -s /usr/local/Cellar/libspotify/12.1.51/lib/libspotify /Library/Frameworks/li
 # Copying of rc files.
 mkdir -p ~/.config/nvim/ && cp init.vim ~/.config/nvim/init.vim;
 mkdir -p ~/.vim/backup/;
-cp -R alacritty ~/.config/alacritty;
 cp .chunkwmrc ~/.chunkwmrc;
 cat .zshrc >> ~/.zshrc;
 cp -r .ncmpcpp ~;
@@ -77,3 +76,4 @@ cargo build --release
 make app
 cp -r target/release/osx/Alacritty.app /Applications/
 cd `curr_dir`
+cp -R alacritty ~/.config/alacritty;
