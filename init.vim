@@ -12,7 +12,6 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
-Plug 'w0rp/ale'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-fugitive'
 Plug 'nikvdp/ejs-syntax'
@@ -56,16 +55,6 @@ nmap <F8> :TagbarToggle<CR>
 " deoplete tab
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" for use with termnal
-if has('nvim')
-    tnoremap <Esc> <C-\><C-n>
-    tnoremap jk <C-\><C-n>
-    tnoremap <C-h> <C-\><C-N><C-w>h
-    tnoremap <C-j> <C-\><C-N><C-w>j
-    tnoremap <C-k> <C-\><C-N><C-w>k
-    tnoremap <C-l> <C-\><C-N><C-w>l
-endif
-
 """""""""""""""""""""""""""""""""""
 """""""""""" VIM SETTINGS """""""""
 """""""""""""""""""""""""""""""""""
@@ -94,7 +83,6 @@ set hlsearch
 
 " show line numbers
 set number
-set relativenumber
 
 " set line highlighting
 set cursorline
@@ -159,11 +147,10 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-set background=dark
-colorscheme palenight
+colorscheme space-vim-dark
 
 "Snippets
-let g:UltiSnipsExpandTrigger="<F2>"
+let g:UltiSnipsExpandTrigger="<c-w>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -210,13 +197,6 @@ endif
 " force python version to be 3
 let g:jedi#force_py_version = 3
 
-" I do realise that flake8 and neovim python packages need to be installed
-" into the virtual env as well.
-let g:ale_fixers = {
-\   'javascript': ['eslint'],
-\   'python': ['flake8'],
-\}
-
 set tags=./tags,tags;$HOME
 nmap <F8> :TagbarToggle<CR>
 set inccommand=nosplit
@@ -231,3 +211,9 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
+
+""""""""""""""""""""""""""""""""""""""
+""""""""""""""" GVIM """""""""""""""""
+""""""""""""""""""""""""""""""""""""""
+highlight Normal ctermbg=None
+highlight Normal guibg=None
