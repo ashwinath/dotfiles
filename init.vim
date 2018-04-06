@@ -150,7 +150,7 @@ let delimitMate_expand_cr = 1
 colorscheme space-vim-dark
 
 "Snippets
-let g:UltiSnipsExpandTrigger="<c-w>"
+let g:UltiSnipsExpandTrigger="<F2>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -191,7 +191,7 @@ autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 " Silver searcher
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --vimgrep --ignore tags'
 endif
 
 " force python version to be 3
