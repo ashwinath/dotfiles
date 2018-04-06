@@ -6,10 +6,6 @@
 echo 'Setting up configuration';
 xcode-select --install;
 
-# git user
-git config --global user.email "ashwinath@hotmail.com";
-git config --global user.name "ashwinath";
-
 # Oh My Zsh. Gonna make me a 10x developer just by installing this.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
 
@@ -39,6 +35,7 @@ ln -s /usr/local/Cellar/libspotify/12.1.51/lib/libspotify /Library/Frameworks/li
 # Copying of rc files.
 mkdir -p ~/.config/nvim/ && cp init.vim ~/.config/nvim/init.vim;
 mkdir -p ~/.vim/backup/;
+mkdir -p ~/.config/git && cp ignore ~/.config/git/ignore
 cp .chunkwmrc ~/.chunkwmrc;
 cat .zshrc >> ~/.zshrc;
 cp -r .ncmpcpp ~;

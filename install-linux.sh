@@ -3,10 +3,6 @@
 
 echo 'Setting up configuration';
 
-# git user
-git config --global user.email "ashwinath@hotmail.com";
-git config --global user.name "ashwinath";
-
 # Oh My Zsh. Gonna make me a 10x developer just by installing this.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
 
@@ -23,7 +19,9 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # Copying of rc files
 mkdir -p ~/.config/nvim/ && cp init.vim ~/.config/nvim/init.vim;
+mkdir -p ~/.config/git && cp ignore ~/.config/git/ignore
 cp -R alacritty ~/.config/alacritty;
 mkdir -p ~/.vim/backup/;
 cp .tmux.conf ~/.tmux.conf
 cat .zshrc >> ~/.zshrc;
+cp .gitconfig ~
