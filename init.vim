@@ -147,7 +147,8 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme space-vim-dark
+let g:jellybeans_background_color_256='NONE'
+colorscheme jellybeans
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<F2>"
