@@ -73,4 +73,9 @@ cargo build --release
 make app
 cp -r target/release/osx/Alacritty.app /Applications/
 cd `curr_dir`
-cp -R alacritty ~/.config/alacritty;
+cp alacritty.yml ~/.config/alacritty;
+
+# fonts
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts
+cd nerd-fonts && ./install.sh
+cd `curr_dir`
