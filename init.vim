@@ -33,6 +33,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
+Plug 'lifepillar/pgsql.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -154,7 +155,7 @@ let g:jellybeans_background_color_256='NONE'
 colorscheme jellybeans
 
 "Snippets
-let g:UltiSnipsExpandTrigger="<F2>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -204,6 +205,9 @@ let g:jedi#force_py_version = 3
 set tags=./tags,tags;$HOME
 nmap <F8> :TagbarToggle<CR>
 set inccommand=nosplit
+
+" Elephant db
+let g:sql_type_default = 'pgsql'
 
 """"""""""""""""""""""""""""""""""""""
 """"""""""""""" GVIM """""""""""""""""
