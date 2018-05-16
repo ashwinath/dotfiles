@@ -59,6 +59,9 @@ nmap <F8> :TagbarToggle<CR>
 " deoplete tab
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 """""""""""""""""""""""""""""""""""
 """""""""""" VIM SETTINGS """""""""
 """""""""""""""""""""""""""""""""""
