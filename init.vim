@@ -154,8 +154,7 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-let g:jellybeans_background_color_256='NONE'
-colorscheme jellybeans
+colorscheme challenger_deep
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -226,5 +225,3 @@ set guioptions-=L
 """"""""""""""""""""""""""""""""""""""
 """"""""""""""" GVIM """""""""""""""""
 """"""""""""""""""""""""""""""""""""""
-highlight Normal ctermbg=None
-highlight Normal guibg=None
