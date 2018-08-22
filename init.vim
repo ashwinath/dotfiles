@@ -18,7 +18,6 @@ Plug 'nikvdp/ejs-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'shime/vim-livedown'
-Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'Shougo/vimproc.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -33,7 +32,11 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
-Plug 'lifepillar/pgsql.vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'mhartington/vim-typings'
+Plug 'leafgarland/typescript-vim'
+Plug 'jason0x43/vim-js-indent'
+Plug 'Shougo/Unite.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -211,17 +214,4 @@ set inccommand=nosplit
 " Elephant db
 let g:sql_type_default = 'pgsql'
 
-""""""""""""""""""""""""""""""""""""""
-""""""""""""""" GVIM """""""""""""""""
-""""""""""""""""""""""""""""""""""""""
-set guifont=InconsolataGo\ Nerd\ Font\ Complete:h17
-set linespace=6
-
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
-
-""""""""""""""""""""""""""""""""""""""
-""""""""""""""" GVIM """""""""""""""""
-""""""""""""""""""""""""""""""""""""""
+set omnifunc=syntaxcomplete#Complete
