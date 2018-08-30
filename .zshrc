@@ -34,3 +34,8 @@ fi
 
 export EDITOR="/usr/local/bin/nvim"
 ZSH_THEME="avit"
+
+# For editing in Vim. run <Ctrl-x><Ctrl-e> to edit
+autoload -U edit-command-line
+zle -N edit-command-line 
+bindkey -M vicmd v edit-command-line
