@@ -37,6 +37,7 @@ Plug 'mhartington/vim-typings'
 Plug 'leafgarland/typescript-vim'
 Plug 'jason0x43/vim-js-indent'
 Plug 'Shougo/Unite.vim'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
