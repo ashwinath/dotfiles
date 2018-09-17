@@ -18,6 +18,7 @@ Plug 'nikvdp/ejs-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'shime/vim-livedown'
+Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'Shougo/vimproc.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -33,11 +34,13 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Quramy/tsuquyomi'
-Plug 'mhartington/vim-typings'
-Plug 'leafgarland/typescript-vim'
-Plug 'jason0x43/vim-js-indent'
 Plug 'Shougo/Unite.vim'
+Plug 'lifepillar/pgsql.vim'
+Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
+Plug 'mhinz/vim-grepper'
+Plug 'pelodelfuego/vim-swoop'
+Plug 'inkarkat/vim-mark'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -215,4 +218,26 @@ set inccommand=nosplit
 " Elephant db
 let g:sql_type_default = 'pgsql'
 
-set omnifunc=syntaxcomplete#Complete
+" ale
+let b:ale_linters = ['flake8']
+
+" swoop
+nmap <Leader>l :call Swoop()<CR>
+vmap <Leader>l :call SwoopSelection()<CR>
+let g:swoopIgnoreCase = 1
+let g:swoopAutoInsertMode = 0
+let g:defaultWinSwoopHeight = 10
+
+" Grepper
+nnoremap ! :GrepperAg 
+
+""""""""""""""""""""""""""""""""""""""
+""""""""""""""" GVIM """""""""""""""""
+""""""""""""""""""""""""""""""""""""""
+set guifont=InconsolataGo\ Nerd\ Font\ Complete:h17
+set linespace=6
+
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
