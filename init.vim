@@ -33,14 +33,13 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
-Plug 'Quramy/tsuquyomi'
-Plug 'Shougo/Unite.vim'
 Plug 'lifepillar/pgsql.vim'
 Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'mhinz/vim-grepper'
 Plug 'pelodelfuego/vim-swoop'
 Plug 'inkarkat/vim-mark'
+Plug 'inkarkat/vim-ingo-library'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -229,7 +228,7 @@ let g:swoopAutoInsertMode = 0
 let g:defaultWinSwoopHeight = 10
 
 " Grepper
-nnoremap ! :GrepperAg 
+nnoremap ! :GrepperAg --ignore tags 
 
 """"""""""""""""""""""""""""""""""""""
 """"""""""""""" GVIM """""""""""""""""
