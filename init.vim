@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""
 """""""""""" VIM PLUG """""""""""""
 """""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
@@ -141,7 +141,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'colorscheme': 'Tomorrow_Night_Blue',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
