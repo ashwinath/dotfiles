@@ -160,7 +160,7 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme challenger_deep
+colorscheme afterglow
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
