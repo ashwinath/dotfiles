@@ -141,7 +141,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'Tomorrow_Night_Blue',
+      \ 'colorscheme': 'PaperColor',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
