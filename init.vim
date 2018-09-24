@@ -228,9 +228,8 @@ let g:swoopAutoInsertMode = 0
 let g:defaultWinSwoopHeight = 10
 
 " Grepper
-nnoremap ! :GrepperAg --ignore tags 
+nnoremap ! :GrepperAg --ignore tags --ignore tags.temp
 
-""""""""""""""""""""""""""""""""""""""
 """"""""""""""" GVIM """""""""""""""""
 """"""""""""""""""""""""""""""""""""""
 set guifont=InconsolataGo\ Nerd\ Font\ Complete:h17
