@@ -165,6 +165,7 @@ let delimitMate_expand_cr = 1
 
 "colour scheme
 colorscheme afterglow
+hi Normal guibg=NONE ctermbg=NONE
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
