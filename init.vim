@@ -35,7 +35,6 @@ Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
 Plug 'lifepillar/pgsql.vim'
 Plug 'w0rp/ale'
-Plug 'Yggdroot/indentLine'
 Plug 'mhinz/vim-grepper'
 Plug 'pelodelfuego/vim-swoop'
 Plug 'inkarkat/vim-mark'
@@ -61,6 +60,11 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 nmap <F8> :TagbarToggle<CR>
+
+noremap <Up> :resize +3<cr>
+noremap <Down> :resize -3<cr>
+noremap <Left> :vertical resize -3<cr>
+noremap <Right> :vertical resize +3<cr>
 
 " deoplete tab
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -228,7 +232,7 @@ let g:swoopAutoInsertMode = 0
 let g:defaultWinSwoopHeight = 10
 
 " Grepper
-nnoremap ! :GrepperAg --ignore tags --ignore tags.temp
+nnoremap ! :GrepperAg --ignore tags --ignore tags.temp 
 
 """"""""""""""" GVIM """""""""""""""""
 """"""""""""""""""""""""""""""""""""""
