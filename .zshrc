@@ -33,7 +33,7 @@ if _has fzf && _has ag; then
 fi
 
 export EDITOR="/usr/local/bin/nvim"
-ZSH_THEME="avit"
+ZSH_THEME="spaceship"
 
 # For editing in Vim. run <Ctrl-x><Ctrl-e> to edit
 autoload -U edit-command-line
