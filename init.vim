@@ -39,6 +39,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'pelodelfuego/vim-swoop'
 Plug 'inkarkat/vim-mark'
 Plug 'inkarkat/vim-ingo-library'
+Plug 'vim-python/python-syntax'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -164,8 +165,8 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme afterglow
-hi Normal guibg=NONE ctermbg=NONE
+colorscheme nord
+"hi Normal guibg=NONE ctermbg=NONE
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
