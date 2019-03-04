@@ -40,6 +40,8 @@ Plug 'pelodelfuego/vim-swoop'
 Plug 'inkarkat/vim-mark'
 Plug 'inkarkat/vim-ingo-library'
 Plug 'vim-python/python-syntax'
+Plug 'digitaltoad/vim-pug'
+Plug 'kchmck/vim-coffee-script'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -146,7 +148,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -165,8 +167,9 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme nord
-"hi Normal guibg=NONE ctermbg=NONE
+colorscheme one-dark
+"let g:nord_cursor_line_number_background = 1
+"let g:nord_uniform_diff_background = 1
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
