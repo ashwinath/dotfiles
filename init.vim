@@ -23,7 +23,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'Shougo/vimproc.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'nvie/vim-flake8'
 Plug 'majutsushi/tagbar'
@@ -42,6 +41,8 @@ Plug 'inkarkat/vim-ingo-library'
 Plug 'vim-python/python-syntax'
 Plug 'digitaltoad/vim-pug'
 Plug 'kchmck/vim-coffee-script'
+Plug 'Yggdroot/indentLine'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -148,7 +149,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'PaperColor',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -167,7 +168,7 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme one-dark
+colorscheme PaperColor
 "let g:nord_cursor_line_number_background = 1
 "let g:nord_uniform_diff_background = 1
 
@@ -211,11 +212,6 @@ endfunction
 
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
-" Silver searcher
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep --ignore tags'
-endif
-
 " force python version to be 3
 let g:jedi#force_py_version = 3
 
@@ -237,7 +233,19 @@ let g:swoopAutoInsertMode = 0
 let g:defaultWinSwoopHeight = 10
 
 " Grepper
-nnoremap ! :GrepperAg --ignore tags --ignore tags.temp 
+nnoremap ! :Grepper -tool rg<cr>
+
+" yaml
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
+" use RipGrep instead
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 
 """"""""""""""" GVIM """""""""""""""""
 """"""""""""""""""""""""""""""""""""""
@@ -248,3 +256,15 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
+
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>

@@ -29,3 +29,5 @@ mkdir -p ~/.vim/backup/;
 cp .tmux.conf ~/.tmux.conf
 cat .zshrc >> ~/.zshrc;
 cp .gitconfig ~
+
+# TODO: need to add compiling of ripgrep
