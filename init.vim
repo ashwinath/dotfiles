@@ -35,7 +35,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'lifepillar/pgsql.vim'
 Plug 'w0rp/ale'
 Plug 'mhinz/vim-grepper'
-Plug 'pelodelfuego/vim-swoop'
 Plug 'inkarkat/vim-mark'
 Plug 'inkarkat/vim-ingo-library'
 Plug 'vim-python/python-syntax'
@@ -43,6 +42,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'kchmck/vim-coffee-script'
 Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -169,6 +169,7 @@ let delimitMate_expand_cr = 1
 
 "colour scheme
 colorscheme PaperColor
+set background=light
 "let g:nord_cursor_line_number_background = 1
 "let g:nord_uniform_diff_background = 1
 
@@ -211,6 +212,7 @@ function! s:fzf_statusline()
 endfunction
 
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
 
 " force python version to be 3
 let g:jedi#force_py_version = 3
@@ -232,8 +234,8 @@ let g:swoopIgnoreCase = 1
 let g:swoopAutoInsertMode = 0
 let g:defaultWinSwoopHeight = 10
 
-" Grepper
-nnoremap ! :Grepper -tool rg<cr>
+nnoremap ! :Ack! 
+let g:ackprg = 'rg --vimgrep --no-heading'
 
 " yaml
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent

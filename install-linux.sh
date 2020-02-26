@@ -5,7 +5,7 @@ echo 'Setting up configuration';
 
 # Debian package manager only
 sudo apt update;
-sudo apt install neovim build-essential cmake silversearcher-ag python python3 ipython ipython3 curl zsh;
+sudo apt install neovim build-essential cmake silversearcher-ag python python3 ipython ipython3 curl zsh ripgrep;
 
 # Oh My Zsh. Gonna make me a 10x developer just by installing this.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
