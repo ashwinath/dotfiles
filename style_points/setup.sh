@@ -3,6 +3,9 @@
 # Sets up Dotfiles for Arch Linux
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm \
+    telegram-desktop \
+    neofetch \
+    ttf-joypixels \
     xclip \
     openssh \
     spotify \
@@ -39,7 +42,7 @@ makepkg -si
 popd
 rm -rf yay
 
-yay -S \
+yay -S --answerdiff=None \
     lightdm-slick-greeter \
     universal-ctags-git
 
@@ -67,7 +70,7 @@ mkdir -p ${HOME}/.config/i3/
 ln -sf ${PWD}/i3_config ${HOME}/.config/i3/config
 
 # - i3blocks, includes all the binaries
-git clone https://github.com/vivien/i3blocks-contrib ~/i3-blocks-contrib --depth=1
+git clone https://github.com/vivien/i3blocks-contrib ~/i3blocks-contrib --depth=1
 mkdir -p ${HOME}/.config/i3blocks/
 ln -sf ${PWD}/i3blocks_config ${HOME}/.config/i3blocks/config
 
