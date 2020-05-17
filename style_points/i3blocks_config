@@ -1,0 +1,54 @@
+command=/usr/libexec/i3blocks/$BLOCK_NAME
+separator_block_width=7
+markup=pango
+align=center
+full_text=<span fgcolor='#95c7ae'></span>
+separator=false
+
+# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+[disk]
+command=$SCRIPT_DIR/disk/disk
+label=DISK 
+instance=/
+interval=30
+[separator]
+
+[bandwidth]
+command=$SCRIPT_DIR/bandwidth/bandwidth
+label=NET 
+instance=enp0s3
+interval=3
+full_text=loading...
+min_width=70
+[separator]
+
+[memory]
+command=$SCRIPT_DIR/memory/memory
+label=MEM 
+separator=false
+interval=3
+[separator]
+
+[memory]
+command=$SCRIPT_DIR/memory/memory
+label=SWAP 
+instance=swap
+separator=false
+interval=30
+[separator]
+
+[cpu_usage]
+command=$SCRIPT_DIR/cpu_usage/cpu_usage
+label=CPU 
+interval=1
+min_width=U 10.00%
+[separator]
+
+[time]
+command=date '+%b %d %l:%M '
+label=
+interval=1
