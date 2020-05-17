@@ -3,6 +3,9 @@
 # Sets up Dotfiles for Arch Linux
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm \
+    xclip \
+    openssh \
+    spotify \
     tree \
     man \
     tmux \

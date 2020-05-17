@@ -40,6 +40,7 @@ alias gl="git log --graph --oneline --all --decorate"
 alias tmux="tmux -u"
 alias k="kubectl"
 alias g="git"
+alias xclip="xclip selection -c"
 
 export EDITOR="/usr/bin/nvim"
 
