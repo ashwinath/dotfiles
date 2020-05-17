@@ -84,7 +84,9 @@ mkdir -p ${HOME}/.config/alacritty/
 ln -sf ${PWD}/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 
 # - tmux
+git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm --depth=1
 ln -sf ${PWD}/tmux.conf ${HOME}/.tmux.conf
+ln -sf ${PWD}/theme.tmux ${HOME}/.theme.tmux
 
 # - xinitrc
 ln -sf ${PWD}/xinitrc ${HOME}/.xinitrc

@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""
 """""""""""" VIM PLUG """""""""""""
 """""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
@@ -149,7 +149,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
+      \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -168,8 +168,8 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme PaperColor
-set background=light
+colorscheme gruvbox
+set background=dark
 "let g:nord_cursor_line_number_background = 1
 "let g:nord_uniform_diff_background = 1
 

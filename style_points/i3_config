@@ -214,7 +214,8 @@ bar {
     }
 }
 
+# i3-gaps
 for_window [class="^.*"] border pixel 4
 smart_borders on
-gaps inner 10
-gaps outer 10
+gaps inner 20
+gaps outer 20
