@@ -43,6 +43,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mileszs/ack.vim'
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -248,6 +249,10 @@ command! -bang -nargs=* Rg
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
+
+" Terraform
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
 
 """"""""""""""" GVIM """""""""""""""""
 """"""""""""""""""""""""""""""""""""""
