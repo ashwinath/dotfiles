@@ -44,6 +44,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mileszs/ack.vim'
 Plug 'hashivim/vim-terraform'
+Plug 'lepture/vim-jinja'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""

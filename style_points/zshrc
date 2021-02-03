@@ -47,4 +47,8 @@ export EDITOR="/usr/bin/nvim"
 # For editing in Vim. run <Ctrl-x><Ctrl-e> to edit
 autoload -U edit-command-line
 zle -N edit-command-line 
+# TODO: install z
+#. /usr/local/etc/profile.d/z.sh
 bindkey -M vicmd v edit-command-line
+source /Users/user/dotfiles/style_points/kube-ps1.sh
+PROMPT='$(kube_ps1)'$PROMPT
