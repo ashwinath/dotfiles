@@ -45,6 +45,10 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mileszs/ack.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'lepture/vim-jinja'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'tpope/vim-rhubarb'
+Plug 'sebdah/vim-delve'
+Plug 'preservim/vimux'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -58,6 +62,7 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 nmap <C-v> :vertical resize +5<cr>
 nmap <leader>p :NERDTreeToggle<cr>
+nmap <leader>t :NERDTreeFind<cr>
 " Fold with space
 nnoremap <space> za
 " remap multiple window keys
@@ -151,7 +156,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'palenight',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -170,7 +175,7 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme gruvbox
+colorscheme palenight
 set background=dark
 "let g:nord_cursor_line_number_background = 1
 "let g:nord_uniform_diff_background = 1
@@ -254,6 +259,20 @@ command! -bang -nargs=* Rg
 " Terraform
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+" Gitlab for gojek repositories
+let g:fugitive_gitlab_domains = ['https://source.golabs.io']
+
+let g:go_def_mode='godef'
+let g:go_fmt_options = {
+\ 'gofmt': '-s',
+\ 'goimports': '-local mycompany.com',
+\ }
+"let g:go_debug=["lsp"]
+" Delve settings
+let g:delve_backend = "default"
+nmap <Leader>b :DlvToggleBreakpoint<CR>
+nmap <F5> :DlvTest<CR>
 
 """"""""""""""" GVIM """""""""""""""""
 """"""""""""""""""""""""""""""""""""""
