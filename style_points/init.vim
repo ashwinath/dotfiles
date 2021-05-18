@@ -49,6 +49,7 @@ Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'sebdah/vim-delve'
 Plug 'preservim/vimux'
+Plug 'bluz71/vim-moonfly-colors'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -175,7 +176,7 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme palenight
+colorscheme moonfly
 set background=dark
 "let g:nord_cursor_line_number_background = 1
 "let g:nord_uniform_diff_background = 1
