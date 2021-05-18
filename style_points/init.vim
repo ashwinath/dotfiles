@@ -33,7 +33,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
 Plug 'lifepillar/pgsql.vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'mhinz/vim-grepper'
 Plug 'inkarkat/vim-mark'
 Plug 'inkarkat/vim-ingo-library'
@@ -233,7 +233,7 @@ set inccommand=nosplit
 let g:sql_type_default = 'pgsql'
 
 " ale
-let b:ale_linters = ['flake8']
+let b:ale_linters = ['flake8', 'golangci_lint']
 
 " swoop
 nmap <Leader>l :call Swoop()<CR>
