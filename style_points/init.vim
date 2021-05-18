@@ -275,6 +275,9 @@ let g:delve_backend = "default"
 nmap <Leader>b :DlvToggleBreakpoint<CR>
 nmap <F5> :DlvTest<CR>
 
+"Golang autocomplete
+au filetype go inoremap <buffer> . .<C-x><C-o>
+
 """"""""""""""" GVIM """""""""""""""""
 """"""""""""""""""""""""""""""""""""""
 set guifont=InconsolataGo\ Nerd\ Font\ Complete:h17
