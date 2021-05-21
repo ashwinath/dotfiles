@@ -267,7 +267,6 @@ let g:fugitive_gitlab_domains = ['https://source.golabs.io']
 let g:go_def_mode='godef'
 let g:go_fmt_options = {
 \ 'gofmt': '-s',
-\ 'goimports': '-local mycompany.com',
 \ }
 "let g:go_debug=["lsp"]
 " Delve settings
