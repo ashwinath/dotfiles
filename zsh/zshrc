@@ -1,9 +1,13 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-alias vim=nvim
-alias ctags="`brew --prefix`/bin/ctags"
-alias gl='git log --graph --oneline --all --decorate'
-alias tmux="tmux -u"
+# TODO: havent solved this part on how to split the zshrc files
 
+# Oh my zsh config
+export ZSH="/home/ashwin/.oh-my-zsh"
+ZSH_THEME="agnoster"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+
+# Own configs
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 _has() {
   return $( whence $1 >/dev/null )
 }
@@ -32,10 +36,20 @@ if _has fzf && _has ag; then
   '
 fi
 
-export EDITOR="/usr/local/bin/nvim"
-ZSH_THEME="spaceship"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+alias vim="nvim"
+alias tmux="tmux -u"
+alias k="kubectl"
+alias g="git"
+alias xclip="xclip selection -c"
+
+export EDITOR="/usr/bin/nvim"
 
 # For editing in Vim. run <Ctrl-x><Ctrl-e> to edit
 autoload -U edit-command-line
 zle -N edit-command-line 
+# TODO: install z
+#. /usr/local/etc/profile.d/z.sh
 bindkey -M vicmd v edit-command-line
+source /Users/user/dotfiles/style_points/kube-ps1.sh
+PROMPT='$(kube_ps1)'$PROMPT

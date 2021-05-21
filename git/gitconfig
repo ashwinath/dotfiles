@@ -1,0 +1,14 @@
+[user]
+	name = Ashwin Chatterji
+[alias]
+    shame = blame
+    co = checkout
+    st = status
+    br = branch
+    fap = fetch --prune
+    p = pull --ff-only
+    fa = fetch --all --tags
+    cp = cherry-pick
+    l = log --graph --oneline --all --decorate
+[include]
+    path = /home/.gojekgit

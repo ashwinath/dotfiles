@@ -1,6 +1,5 @@
 #!/bin/bash
-# Author: Ashwin Chatterji <ashwinath@hotmail.com>
-# Sets up Dotfiles for Arch Linux
+# TODO: not tested
 sudo apt update
 sudo apt install -y \
     tmux \
@@ -21,9 +20,9 @@ sudo apt install -y \
 sudo apt remove docker docker-engine docker.io containerd runc
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+          $(lsb_release -cs) \
+             stable"
 sudo apt -y install docker-ce docker-ce-cli containerd.io
 
 # Install universal ctags
