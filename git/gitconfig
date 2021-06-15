@@ -11,4 +11,4 @@
     cp = cherry-pick
     l = log --graph --oneline --all --decorate
 [include]
-    path = /home/.gojekgit
+    path = /Users/user/.gojekgit
