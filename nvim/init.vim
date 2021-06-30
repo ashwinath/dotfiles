@@ -28,7 +28,7 @@ Plug 'nvie/vim-flake8'
 Plug 'majutsushi/tagbar'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --java-completer --ts-completer' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
@@ -51,6 +51,8 @@ Plug 'sebdah/vim-delve'
 Plug 'preservim/vimux'
 Plug 'bluz71/vim-moonfly-colors'
 call plug#end()
+
+let g:plug_timeout=1000
 
 """""""""""""""""""""""""""""""""""
 """""""""""" REMAPS """""""""""""""
@@ -78,9 +80,6 @@ noremap <Down> :resize -3<cr>
 noremap <Left> :vertical resize -3<cr>
 noremap <Right> :vertical resize +3<cr>
 
-" deoplete tab
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
@@ -90,7 +89,6 @@ cmap w!! w !sudo tee > /dev/null %
 
 set diffopt+=vertical
 set hidden
-let g:deoplete#enable_at_startup = 1
 
 " .vimrc folding
 augroup filetype_vim
@@ -273,9 +271,6 @@ let g:go_fmt_options = {
 let g:delve_backend = "default"
 nmap <Leader>b :DlvToggleBreakpoint<CR>
 nmap <F5> :DlvTest<CR>
-
-"Golang autocomplete
-au filetype go inoremap <buffer> . .<C-x><C-o>
 
 """"""""""""""" GVIM """""""""""""""""
 """"""""""""""""""""""""""""""""""""""
