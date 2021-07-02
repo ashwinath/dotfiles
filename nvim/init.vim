@@ -174,7 +174,7 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme moonfly
+colorscheme gruvbox
 set background=dark
 "let g:nord_cursor_line_number_background = 1
 "let g:nord_uniform_diff_background = 1
