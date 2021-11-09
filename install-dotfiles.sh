@@ -2,7 +2,7 @@
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install --no-bash --no-zsh --no-fish
+~/.fzf/install --no-bash --no-fish
 
 # Oh My Zsh
 curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh

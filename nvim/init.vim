@@ -28,7 +28,7 @@ Plug 'nvie/vim-flake8'
 Plug 'majutsushi/tagbar'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --java-completer --ts-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --ts-completer' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
