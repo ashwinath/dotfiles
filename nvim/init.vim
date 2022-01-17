@@ -27,7 +27,6 @@ Plug 'davidhalter/jedi-vim'
 Plug 'nvie/vim-flake8'
 Plug 'majutsushi/tagbar'
 Plug 'machakann/vim-highlightedyank'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --ts-completer' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-repeat'
@@ -50,6 +49,10 @@ Plug 'tpope/vim-rhubarb'
 Plug 'sebdah/vim-delve'
 Plug 'preservim/vimux'
 Plug 'bluz71/vim-moonfly-colors'
+Plug 'google/vim-jsonnet'
+Plug 'chr4/nginx.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'mustache/vim-mustache-handlebars'
 call plug#end()
 
 let g:plug_timeout=1000
@@ -246,11 +249,14 @@ let g:ackprg = 'rg --vimgrep --no-heading'
 " yaml
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+" jsonnet
+au! BufNewFile,BufReadPost *.{jsonnet} set filetype=jsonnet foldmethod=indent
+autocmd FileType jsonnet setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 " use RipGrep instead
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   'rg --hidden --column --line-number --no-heading --color=always --smart-case'.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
@@ -272,24 +278,4 @@ let g:delve_backend = "default"
 nmap <Leader>b :DlvToggleBreakpoint<CR>
 nmap <F5> :DlvTest<CR>
 
-""""""""""""""" GVIM """""""""""""""""
-""""""""""""""""""""""""""""""""""""""
-set guifont=InconsolataGo\ Nerd\ Font\ Complete:h17
-set linespace=6
-
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
-
-" Go to tab by number
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>
+let g:jsonnet_fmt_on_save = 0
