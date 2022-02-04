@@ -27,7 +27,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'nvie/vim-flake8'
 Plug 'majutsushi/tagbar'
 Plug 'machakann/vim-highlightedyank'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --ts-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --ts-completer --rust-completer' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
@@ -113,7 +113,7 @@ set hlsearch
 "set incsearch
 
 " show line numbers
-set number
+set relativenumber
 
 " set line highlighting
 set cursorline

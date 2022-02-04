@@ -21,9 +21,14 @@ mkdir -p ${HOME}/.config/alacritty/
 ln -sf ${PWD}/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 
 # Tmux
-#git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm --depth=1
+git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm --depth=1
 ln -sf ${PWD}/tmux/tmux.conf ${HOME}/.tmux.conf
 ln -sf ${PWD}/tmux/theme.tmux ${HOME}/.theme.tmux
 
 # Git
 ln -sf ${PWD}/git/gitconfig ${HOME}/.gitconfig
+
+# i3-gaps
+mkdir -p ${HOME}/.config/i3
+ln -sf ${PWD}/i3/i3_config ${HOME}/.config/i3/config
+ln -sf ${PWD}/i3/i3blocks_config ${HOME}/i3blocks
