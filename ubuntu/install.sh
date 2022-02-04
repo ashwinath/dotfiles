@@ -26,7 +26,8 @@ sudo apt install -y \
     libxcb-xfixes0-dev \
     libxkbcommon-dev \
     i3-gaps \
-    sysstat
+    sysstat \
+    feh
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -66,10 +67,10 @@ popd
 rm -rf nerd-fonts
 
 # install go
-#curl -LO https://golang.org/dl/go1.17.3.linux-amd64.tar.gz
-#sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.17.3.linux-amd64.tar.gz
-#echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.zshrc
-#rm go1.17.3.linux-amd64.tar.gz
+curl -LO https://golang.org/dl/go1.14.15.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.14.15.linux-amd64.tar.gz
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.zshrc
+rm go1.14.15.linux-amd64.tar.gz
 
 # install node js
 #curl -sL https://deb.nodesource.com/setup_16.x | sudo bash

@@ -16,6 +16,13 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 nvim +'PlugInstall --sync' +qa
 pip install neovim
 
+# compile YCM
+pushd ${HOME}/.vim/plugged/YouCompleteMe
+{
+    ./install.py --go-completer --rust-completer
+}
+popd
+
 # Alacritty
 mkdir -p ${HOME}/.config/alacritty/
 ln -sf ${PWD}/alacritty/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
@@ -52,3 +59,6 @@ pushd ${HOME}
     rm -f i3blocks-git
 }
 popd
+
+mkdir -p ${HOME}/wallpaper
+curl -L -o ${HOME}/wallpaper/1.jpg https://w.wallhaven.cc/full/nk/wallhaven-nk1314.jpg
