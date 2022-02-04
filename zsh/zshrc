@@ -56,6 +56,6 @@ PROMPT='$(kube_ps1)'$PROMPT
 TERM=xterm-256color
 
 function suspend {
-    i3lock
+    i3lock -c 000000
     systemctl suspend
 }
