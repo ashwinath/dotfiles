@@ -31,4 +31,24 @@ ln -sf ${PWD}/git/gitconfig ${HOME}/.gitconfig
 # i3-gaps
 mkdir -p ${HOME}/.config/i3
 ln -sf ${PWD}/i3/i3_config ${HOME}/.config/i3/config
-ln -sf ${PWD}/i3/i3blocks_config ${HOME}/i3blocks
+pushd ${HOME}
+{
+    git clone git@github.com:vivien/i3blocks-contrib.git 
+}
+mkdir -p ${HOME}/.config/i3blocks
+ln -sf ${PWD}/i3/i3blocks_config ${HOME}/.config/i3blocks/config
+
+pushd ${HOME}
+{
+    git clone https://github.com/vivien/i3blocks i3blocks-git
+    pushd i3blocks-git
+    {
+        ./autogen.sh
+        ./configure
+        make
+        sudo make install
+    }
+    popd
+    rm -f i3blocks-git
+}
+popd

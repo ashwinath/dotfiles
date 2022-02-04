@@ -25,7 +25,8 @@ sudo apt install -y \
     libfontconfig1-dev \
     libxcb-xfixes0-dev \
     libxkbcommon-dev \
-    i3-gaps
+    i3-gaps \
+    sysstat
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
