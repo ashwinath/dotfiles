@@ -53,6 +53,7 @@ Plug 'google/vim-jsonnet'
 Plug 'chr4/nginx.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 let g:plug_timeout=1000
