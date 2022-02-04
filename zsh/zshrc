@@ -54,3 +54,8 @@ bindkey -M vicmd v edit-command-line
 source /Users/user/dotfiles/style_points/kube-ps1.sh
 PROMPT='$(kube_ps1)'$PROMPT
 TERM=xterm-256color
+
+function suspend {
+    i3lock
+    systemctl suspend
+}

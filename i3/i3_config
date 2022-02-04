@@ -45,7 +45,7 @@ floating_modifier $mod
 bindsym $mod+Return exec "env LIBGL_ALWAYS_SOFTWARE=1 alacritty"
 
 # Rofi
-bindsym $mod+Tab exec "rofi -combi-modi window,drun -font 'hack 16' -show combi -icon-theme 'Papirus' -show-icons -bw 0 -bc '#2f343f' -bg '#2f343f' -hlbg '#2f343f' -hlfg '#c79595' -fg '#95c7ae'"
+bindsym $mod+space exec "rofi -combi-modi window,drun -font 'hack 16' -show combi -icon-theme 'Papirus' -show-icons -bw 0 -bc '#2f343f' -bg '#2f343f' -hlbg '#2f343f' -hlfg '#c79595' -fg '#95c7ae'"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -62,6 +62,13 @@ bindsym $mod+d exec dmenu_run
 #bindsym $mod+j focus down
 #bindsym $mod+k focus up
 #bindsym $mod+l focus right
+
+# Lock screen
+# Just type your password + enter to unlock
+bindsym $mod+l exec i3lock -c 000000 -n
+
+# Don't let the mouse dictate what you should focus on
+focus_follows_mouse no
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -96,10 +103,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+#bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
