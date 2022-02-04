@@ -6,7 +6,6 @@ sudo apt install -y \
     python3 \
     python3-dev \
     python3-pip \
-    tmux \
     zsh \
     neovim \
     automake \
@@ -27,7 +26,10 @@ sudo apt install -y \
     libxkbcommon-dev \
     i3-gaps \
     sysstat \
-    feh
+    feh \
+    libevent-dev \
+    ncurses-dev \
+    bison
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -75,3 +77,16 @@ rm go1.14.15.linux-amd64.tar.gz
 # install node js
 #curl -sL https://deb.nodesource.com/setup_16.x | sudo bash
 #sudo apt install -y nodejs
+
+# compile tmux
+curl -LO https://github.com/tmux/tmux/releases/download/3.2a/tmux-3.2a.tar.gz
+tar xzf tmux-3.21.tar.gz
+rm tmux-3.21.tar.gz
+pushd tmux-3.2a
+{
+    ./configure
+    make
+    sudo make install
+}
+popd
+rm -rf tmux-3.2a
