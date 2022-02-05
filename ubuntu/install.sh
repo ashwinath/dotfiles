@@ -1,6 +1,8 @@
 #!/bin/bash
 sudo add-apt-repository -y ppa:neovim-ppa/stable
 sudo add-apt-repository -y ppa:regolith-linux/release
+curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add -
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt install -y \
     python3 \
     python3-dev \
@@ -30,7 +32,8 @@ sudo apt install -y \
     ncurses-dev \
     libssl \
     bison \
-    htop
+    htop \
+    spotify-client
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 

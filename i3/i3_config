@@ -45,7 +45,8 @@ floating_modifier $mod
 bindsym $mod+Return exec "env LIBGL_ALWAYS_SOFTWARE=1 alacritty"
 
 # Rofi
-bindsym $mod+space exec "rofi -combi-modi window,drun -font 'hack 16' -show combi -icon-theme 'Papirus' -show-icons -bw 0 -bc '#2f343f' -bg '#2f343f' -hlbg '#2f343f' -hlfg '#c79595' -fg '#95c7ae'"
+bindsym $mod+Tab exec "rofi -combi-modi window -font 'hack 16' -show combi -icon-theme 'Papirus' -show-icons -bw 0 -bc '#2f343f' -bg '#2f343f' -hlbg '#2f343f' -hlfg '#c79595' -fg '#95c7ae'"
+bindsym $mod+space exec "rofi -combi-modi drun -font 'hack 16' -show combi -icon-theme 'Papirus' -show-icons -bw 0 -bc '#2f343f' -bg '#2f343f' -hlbg '#2f343f' -hlfg '#c79595' -fg '#95c7ae'"
 
 # kill focused window
 bindsym $mod+Shift+q kill
