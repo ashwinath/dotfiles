@@ -1,3 +1,15 @@
 # Dotfiles
 
-Give me six hours to chop down a tree and I will spend the first four sharpening the axe. - Abraham Lincoln
+My work setup.
+
+# Sample Look
+
+Wallpaper from here: https://wallhaven.cc/w/nr7zq0
+
+## With Windows
+
+![](assets/with_windows.png)
+
+## Empty Desktop
+
+![](assets/empty.png)

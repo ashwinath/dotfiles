@@ -61,4 +61,4 @@ pushd ${HOME}
 popd
 
 mkdir -p ${HOME}/wallpaper
-curl -L -o ${HOME}/wallpaper/1.jpg https://w.wallhaven.cc/full/nk/wallhaven-nk1314.jpg
+curl -L -o ${HOME}/wallpaper/1.jpg https://w.wallhaven.cc/full/nr/wallhaven-nr7zq0.jpg
