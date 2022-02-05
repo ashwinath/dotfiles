@@ -24,7 +24,7 @@ def human_bytes(B):
 all_mem = psutil.virtual_memory()
 
 total = human_bytes(all_mem.total)
-percent = human_bytes(all_mem.percent)
+percent = all_mem.percent
 used = human_bytes(all_mem.total - all_mem.available)
 
-print(f"{used}/{total} ({percent:.2})%", end='')
+print(f"{used}/{total} ({percent:.2f})%", end='')
