@@ -14,13 +14,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-fugitive'
-Plug 'nikvdp/ejs-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'shime/vim-livedown'
-Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
-Plug 'Shougo/vimproc.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'davidhalter/jedi-vim'
@@ -28,17 +24,13 @@ Plug 'nvie/vim-flake8'
 Plug 'majutsushi/tagbar'
 Plug 'machakann/vim-highlightedyank'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --rust-completer' }
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
 Plug 'lifepillar/pgsql.vim'
 Plug 'dense-analysis/ale'
-Plug 'mhinz/vim-grepper'
 Plug 'inkarkat/vim-mark'
 Plug 'inkarkat/vim-ingo-library'
 Plug 'vim-python/python-syntax'
-Plug 'digitaltoad/vim-pug'
-Plug 'kchmck/vim-coffee-script'
 Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mileszs/ack.vim'
@@ -47,13 +39,11 @@ Plug 'lepture/vim-jinja'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'sebdah/vim-delve'
-Plug 'preservim/vimux'
-Plug 'bluz71/vim-moonfly-colors'
 Plug 'google/vim-jsonnet'
 Plug 'chr4/nginx.vim'
-Plug 'derekwyatt/vim-scala'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
+Plug 'mangeshrex/uwu.vim'
 call plug#end()
 
 let g:plug_timeout=1000
@@ -178,10 +168,14 @@ set bs=2
 let delimitMate_expand_cr = 1
 
 "colour scheme
-colorscheme gruvbox
-set background=dark
-"let g:nord_cursor_line_number_background = 1
-"let g:nord_uniform_diff_background = 1
+
+"For gruvbox
+"colorscheme gruvbox
+"set background=dark
+
+set termguicolors
+let ayucolor="mirage"
+colorscheme ayu
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
