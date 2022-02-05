@@ -1,0 +1,31 @@
+theme = "solarized-dark"
+icons = "awesome"
+
+[[block]]
+block = "custom"
+command = "bash ${HOME}/.config/i3status-rust/kubernetes.sh"
+interval = 1
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "battery"
+interval = 10
+driver = "upower"
+format = "{percentage} {time}"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%A, %d %B %Y, %R"

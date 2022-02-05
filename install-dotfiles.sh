@@ -38,13 +38,11 @@ ln -sf ${PWD}/git/gitconfig ${HOME}/.gitconfig
 # i3-gaps
 mkdir -p ${HOME}/.config/i3
 ln -sf ${PWD}/i3/i3_config ${HOME}/.config/i3/config
-pushd ${HOME}
-{
-    git clone git@github.com:vivien/i3blocks-contrib.git 
-}
 
-# i3status
-ln -sf ${PWD}/i3status ${HOME}/.config/i3status
-
+# wallpaper
 mkdir -p ${HOME}/wallpaper
 curl -L -o ${HOME}/wallpaper/1.jpg https://w.wallhaven.cc/full/nr/wallhaven-nr7zq0.jpg
+
+# i3status-rust 
+mkdir -p ${HOME}/.config/i3status-rust
+ln -sf ${PWD}/i3status-rust ${HOME}/.config/i3status-rust

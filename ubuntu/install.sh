@@ -34,10 +34,12 @@ sudo apt install -y \
     bison \
     htop \
     spotify-client \
-    meson \
-    libpulse-dev \
-    libboost-program-options1.67-dev \
-    screenfetch
+    screenfetch \
+    fonts-font-awesome \
+    libsensors-dev \
+    libssl-dev \
+    libdbus-1-dev \
+    jq
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -99,12 +101,14 @@ pushd tmux-3.2a
 popd
 rm -rf tmux-3.2a
 
-# install pamixer
-git clone https://github.com/cdemoulins/pamixer.git
-pushd pamixer
+# install i3status-rust
+git clone https://github.com/greshake/i3status-rust
+pushd i3status-rust
 {
-    meson setup build
-    sudo meson install -C build
+    cargo install --path .
+    ./install.sh
 }
-popd
-rm -rf pamixer
+rm -rf i3status-rust
+
+# install alacritty
+cargo install alacritty

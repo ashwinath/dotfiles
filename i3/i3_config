@@ -17,7 +17,7 @@ set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Hack Nerd Font Mono Regular 14
+font pango:NotoSansMono Nerd Font 14
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -205,19 +205,17 @@ client.unfocused        $warning    $warning   $background $warning
 client.urgent           $gray       $gray      $foreground $gray  
 
 bar {
-    # From https://github.com/Tazeg/i3status
-    status_command exec /home/ashwin/.config/i3status/main.sh
     position top
+    status_command i3status-rs
     colors {
-        separator #000000
-
-        ## colour of border, background, and text
-        focused_workspace       #2f343f #bf616a #d8dee8
-        active_workspace        #2f343f #2f343f #d8dee8
-        inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspacei       #2f343f #ebcb8b #2f343f
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
     }
-    height 25
 }
 
 # i3-gaps
