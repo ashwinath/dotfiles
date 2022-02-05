@@ -1,12 +1,9 @@
 #!/bin/bash
 
-if [ "$(uname)" == "Linux" ]; then
-    pushd ubuntu
-elif [ "$(uname)" == "Darwin" ]; then
-    pushd macos
-fi
-
-./install.sh
+pushd ubuntu
+{
+    ./install.sh
+}
 popd
 
 ./install-dotfiles.sh

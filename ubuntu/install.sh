@@ -1,5 +1,4 @@
 #!/bin/bash
-# TODO: not tested
 sudo add-apt-repository -y ppa:neovim-ppa/stable
 sudo add-apt-repository -y ppa:regolith-linux/release
 sudo apt install -y \
@@ -30,7 +29,8 @@ sudo apt install -y \
     libevent-dev \
     ncurses-dev \
     libssl \
-    bison
+    bison \
+    htop
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 

@@ -204,25 +204,23 @@ client.unfocused        $warning    $warning   $background $warning
 client.urgent           $gray       $gray      $foreground $gray  
 
 bar {
-    i3bar_command     i3bar  
-    status_command    SCRIPT_DIR=/home/ashwin/i3blocks-contrib i3blocks
-    position          top
-    workspace_buttons yes
-    tray_output none
+    # From https://github.com/Tazeg/i3status
+    status_command exec /home/ashwin/.config/i3status/main.sh
+    position top
     colors {
-        background $background
-        statusline $warning
-        
-        # Colors go <border> <background> <text> <indicator>
-        focused_workspace $primary $primary $foreground
-        active_workspace $background $background $warning
-        inactive_workspace $background $background $warning
-        urgent_workspace $warning $warning $primary
+        separator #000000
+
+        ## colour of border, background, and text
+        focused_workspace       #2f343f #bf616a #d8dee8
+        active_workspace        #2f343f #2f343f #d8dee8
+        inactive_workspace      #2f343f #2f343f #d8dee8
+        urgent_workspacei       #2f343f #ebcb8b #2f343f
     }
+    height 25
 }
 
 # i3-gaps
 for_window [class="^.*"] border pixel 4
 smart_borders on
-gaps inner 20
-gaps outer 20
+gaps inner 10
+gaps outer 10

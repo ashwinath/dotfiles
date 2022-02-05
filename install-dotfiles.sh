@@ -42,23 +42,9 @@ pushd ${HOME}
 {
     git clone git@github.com:vivien/i3blocks-contrib.git 
 }
-mkdir -p ${HOME}/.config/i3blocks
-ln -sf ${PWD}/i3/i3blocks_config ${HOME}/.config/i3blocks/config
 
-pushd ${HOME}
-{
-    git clone https://github.com/vivien/i3blocks i3blocks-git
-    pushd i3blocks-git
-    {
-        ./autogen.sh
-        ./configure
-        make
-        sudo make install
-    }
-    popd
-    rm -f i3blocks-git
-}
-popd
+# i3status
+ln -sf ${PWD}/i3status ${HOME}/.config/i3status
 
 mkdir -p ${HOME}/wallpaper
 curl -L -o ${HOME}/wallpaper/1.jpg https://w.wallhaven.cc/full/nr/wallhaven-nr7zq0.jpg
