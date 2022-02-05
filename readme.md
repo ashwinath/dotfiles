@@ -6,9 +6,9 @@ My work setup.
 
 Wallpaper from here: https://wallhaven.cc/w/nr7zq0
 
-## With Windows
+## Tmux + Neovim
 
-![](assets/with_windows.png)
+![](assets/terminal.png)
 
 ## Empty Desktop
 

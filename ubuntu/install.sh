@@ -36,7 +36,8 @@ sudo apt install -y \
     spotify-client \
     meson \
     libpulse-dev \
-    libboost-program-options1.67-dev
+    libboost-program-options1.67-dev \
+    screenfetch
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
