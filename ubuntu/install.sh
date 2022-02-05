@@ -33,7 +33,10 @@ sudo apt install -y \
     libssl \
     bison \
     htop \
-    spotify-client
+    spotify-client \
+    meson \
+    libpulse-dev \
+    libboost-program-options1.67-dev
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -94,3 +97,13 @@ pushd tmux-3.2a
 }
 popd
 rm -rf tmux-3.2a
+
+# install pamixer
+git clone https://github.com/cdemoulins/pamixer.git
+pushd pamixer
+{
+    meson setup build
+    sudo meson install -C build
+}
+popd
+rm -rf pamixer
