@@ -39,7 +39,9 @@ sudo apt install -y \
     libsensors-dev \
     libssl-dev \
     libdbus-1-dev \
-    jq
+    jq \
+    arandr \
+    pavucontrol
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
