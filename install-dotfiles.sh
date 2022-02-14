@@ -34,6 +34,7 @@ ln -sf ${PWD}/tmux/theme.tmux ${HOME}/.theme.tmux
 
 # Git
 ln -sf ${PWD}/git/gitconfig ${HOME}/.gitconfig
+ln -sf ${PWD}/git/gitignore ${HOME}/.gitignore
 
 # i3-gaps
 mkdir -p ${HOME}/.config/i3
@@ -44,5 +45,4 @@ mkdir -p ${HOME}/wallpaper
 curl -L -o ${HOME}/wallpaper/1.jpg https://w.wallhaven.cc/full/nr/wallhaven-nr7zq0.jpg
 
 # i3status-rust 
-mkdir -p ${HOME}/.config/i3status-rust
 ln -sf ${PWD}/i3status-rust ${HOME}/.config/i3status-rust

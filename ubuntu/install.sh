@@ -30,7 +30,6 @@ sudo apt install -y \
     feh \
     libevent-dev \
     ncurses-dev \
-    libssl \
     bison \
     htop \
     spotify-client \
@@ -58,6 +57,9 @@ sudo add-apt-repository \
           $(lsb_release -cs) \
              stable"
 sudo apt -y install docker-ce docker-ce-cli containerd.io
+
+sudo groupadd docker
+sudo gpasswd -a ashwin docker
 
 # Install universal ctags
 git clone https://github.com/universal-ctags/ctags.git
@@ -92,7 +94,7 @@ rm go1.14.15.linux-amd64.tar.gz
 
 # compile tmux
 curl -LO https://github.com/tmux/tmux/releases/download/3.2a/tmux-3.2a.tar.gz
-tar xzf tmux-3.21.tar.gz
+tar xzf tmux-3.2a.tar.gz
 rm tmux-3.21.tar.gz
 pushd tmux-3.2a
 {
@@ -110,6 +112,7 @@ pushd i3status-rust
     cargo install --path .
     ./install.sh
 }
+popd
 rm -rf i3status-rust
 
 # install alacritty

@@ -11,4 +11,6 @@
     cp = cherry-pick
     l = log --graph --oneline --all --decorate
 [include]
-    path = /Users/user/.gojekgit
+    path = /home/ashwin/.gojekgit
+[core]
+    excludesfile = /home/ashwin/.gitignore

@@ -104,6 +104,7 @@ set hlsearch
 
 " show line numbers
 set relativenumber
+set number
 
 " set line highlighting
 set cursorline
