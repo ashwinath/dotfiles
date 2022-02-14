@@ -175,7 +175,7 @@ let delimitMate_expand_cr = 1
 "set background=dark
 
 set termguicolors
-let ayucolor="mirage"
+let ayucolor="dark"
 colorscheme ayu
 
 "Snippets
