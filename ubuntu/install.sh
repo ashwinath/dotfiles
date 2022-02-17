@@ -40,7 +40,8 @@ sudo apt install -y \
     libdbus-1-dev \
     jq \
     arandr \
-    pavucontrol
+    pavucontrol \
+    xcompmgr
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
