@@ -275,3 +275,4 @@ nmap <Leader>b :DlvToggleBreakpoint<CR>
 nmap <F5> :DlvTest<CR>
 
 let g:jsonnet_fmt_on_save = 0
+let g:indentLine_setConceal = 0
