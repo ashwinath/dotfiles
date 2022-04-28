@@ -59,3 +59,7 @@ function suspend {
     i3lock -c 000000
     systemctl suspend
 }
+
+alias lsd='ls'
+alias du='dust'
+alias df='duf'

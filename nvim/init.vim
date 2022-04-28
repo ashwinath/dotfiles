@@ -44,6 +44,7 @@ Plug 'chr4/nginx.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
 Plug 'mangeshrex/uwu.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
 let g:plug_timeout=1000
@@ -175,8 +176,8 @@ let delimitMate_expand_cr = 1
 "set background=dark
 
 set termguicolors
-let ayucolor="dark"
-colorscheme ayu
+"let ayucolor="dark"
+colorscheme PaperColor
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -265,9 +266,9 @@ let g:terraform_fmt_on_save=1
 let g:fugitive_gitlab_domains = ['https://source.golabs.io']
 
 let g:go_def_mode='godef'
-let g:go_fmt_options = {
-\ 'gofmt': '-s',
-\ }
+"let g:go_fmt_options = {
+"\ 'gofmt': '-s',
+"\ }
 "let g:go_debug=["lsp"]
 " Delve settings
 let g:delve_backend = "default"

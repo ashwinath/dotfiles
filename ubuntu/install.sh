@@ -118,3 +118,23 @@ rm -rf i3status-rust
 
 # install alacritty
 cargo install alacritty
+
+# install bottom
+curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb
+sudo dpkg -i bottom_0.6.8_amd64.deb
+rm bottom_0.6.8_amd64.deb
+
+# install lsd
+curl -LO https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd-0.21.0-x86_64-unknown-linux-gnu.tar.gz
+tar xzf lsd-0.21.0-x86_64-unknown-linux-gnu.tar.gz
+sudo mv lsd-0.21.0-x86_64-unknown-linux-gnu/lsd /usr/local/bin
+rm lsd-0.21.0-x86_64-unknown-linux-gnu.tar.gz
+rm -rf lsd-0.21.0-x86_64-unknown-linux-gnu
+
+#install dust
+cargo install du-dust
+
+# install duf
+curl -LO https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb
+sudo dpkg -i duf_0.8.1_linux_amd64.deb
+rm duf_0.8.1_linux_amd64.deb

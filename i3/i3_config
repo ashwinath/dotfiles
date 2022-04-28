@@ -27,7 +27,7 @@ font pango:NotoSansMono Nerd Font 14
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id feh --bg-scale '/home/ashwin/wallpaper/1.jpg'
 exec_always --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
-exec --no-startup-id setxkbmap -option ctrl:nocaps
+#exec --no-startup-id setxkbmap -option ctrl:nocaps
 # Home monitor is 2560x1440, gotta change if monitor changes
 #exec_always --no-startup-id xrandr --output eDP-1 --rate 144 --scale-from 2560x1440 --output HDMI-2 
 
