@@ -10,7 +10,5 @@
     fa = fetch --all --tags
     cp = cherry-pick
     l = log --graph --oneline --all --decorate
-[include]
-    path = /home/ashwin/.gojekgit
 [core]
     excludesfile = /home/ashwin/.gitignore

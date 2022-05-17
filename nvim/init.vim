@@ -262,9 +262,6 @@ command! -bang -nargs=* Rg
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
-" Gitlab for gojek repositories
-let g:fugitive_gitlab_domains = ['https://source.golabs.io']
-
 let g:go_def_mode='godef'
 "let g:go_fmt_options = {
 "\ 'gofmt': '-s',
