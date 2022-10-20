@@ -1,0 +1,41 @@
+devices:
+  samplerate: 96000
+  chunksize: 8192
+  queuelimit: 4
+  silence_threshold: -60
+  silence_timeout: 3.0
+  target_level: 500
+  adjust_period: 10
+  enable_rate_adjust: true
+  enable_resampling: true
+  resampler_type: BalancedAsync
+  capture_samplerate: 44100
+  stop_on_rate_change: false
+  rate_measure_interval: 1.0
+  capture:
+    type: CoreAudio
+    channels: 2
+    device: "BlackHole 2ch"
+  playback:
+    type: CoreAudio
+    channels: 2
+    device: "MacBook Pro Speakers"
+mixers:
+  hd800_mixer:
+    channels:
+      in: 2
+      out: 2
+    mapping:
+    - dest: 0
+      sources:
+      - channel: 0
+        gain: 0
+        inverted: false
+    - dest: 1
+      sources:
+      - channel: 1
+        gain: 0
+        inverted: false
+pipeline:
+  - type: Mixer
+    name: hd800_mixer
