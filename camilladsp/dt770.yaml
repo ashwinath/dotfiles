@@ -1,0 +1,138 @@
+devices:
+  samplerate: 96000
+  chunksize: 8192
+  queuelimit: 4
+  silence_threshold: -60
+  silence_timeout: 3.0
+  target_level: 500
+  adjust_period: 10
+  enable_rate_adjust: true
+  enable_resampling: true
+  resampler_type: BalancedAsync
+  capture_samplerate: 44100
+  stop_on_rate_change: false
+  rate_measure_interval: 1.0
+  capture:
+    type: CoreAudio
+    channels: 2
+    device: "BlackHole 2ch"
+  playback:
+    type: CoreAudio
+    channels: 2
+    device: "D50s "
+filters:
+  dt770_band_1:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 31.5
+      gain: 0.2
+      q: 1.41
+  dt770_band_2:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 63
+      gain: 2.0
+      q: 1.41
+  dt770_band_3:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 125
+      gain: -1.7
+      q: 1.41
+  dt770_band_4:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 250
+      gain: 1.5
+      q: 1.41
+  dt770_band_5:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 500
+      gain: -1.1
+      q: 1.41
+  dt770_band_6:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 1000
+      gain: 0.1
+      q: 1.41
+  dt770_band_7:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 2000
+      gain: 0
+      q: 1.41
+  dt770_band_8:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 4000
+      gain: 2.0
+      q: 1.41
+  dt770_band_9:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 8000
+      gain: -3.0
+      q: 1.41
+  dt770_band_10:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 16000
+      gain: -6.0
+      q: 1.41
+mixers:
+  dt770_mixer:
+    channels:
+      in: 2
+      out: 2
+    mapping:
+    - dest: 0
+      sources:
+      - channel: 0
+        gain: -1.8
+        inverted: false
+    - dest: 1
+      sources:
+      - channel: 1
+        gain: -1.8
+        inverted: false
+pipeline:
+  - type: Mixer
+    name: dt770_mixer
+  - type: Filter
+    channel: 0
+    names:
+    - dt770_band_1
+    - dt770_band_2
+    - dt770_band_3
+    - dt770_band_4
+    - dt770_band_5
+    - dt770_band_6
+    - dt770_band_7
+    - dt770_band_8
+    - dt770_band_9
+    - dt770_band_10
+  - type: Filter
+    channel: 1
+    names:
+    - dt770_band_1
+    - dt770_band_2
+    - dt770_band_3
+    - dt770_band_4
+    - dt770_band_5
+    - dt770_band_6
+    - dt770_band_7
+    - dt770_band_8
+    - dt770_band_9
+    - dt770_band_10
