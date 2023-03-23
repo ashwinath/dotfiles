@@ -19,7 +19,7 @@ devices:
   playback:
     type: CoreAudio
     channels: 2
-    device: "D50s "
+    device: "External Headphones"
 filters:
   dt770_band_1:
     type: Biquad
