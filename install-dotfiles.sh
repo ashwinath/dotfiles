@@ -46,3 +46,7 @@ curl -L -o ${HOME}/wallpaper/1.jpg https://w.wallhaven.cc/full/nr/wallhaven-nr7z
 
 # i3status-rust 
 ln -sf ${PWD}/i3status-rust ${HOME}/.config/i3status-rust
+
+# yabai
+ln -sf ${PWD}/yabai/.yabairc ${HOME}/.yabairc
+ln -sf ${PWD}/yabai/.skhdrc ${HOME}/.skhdrc
