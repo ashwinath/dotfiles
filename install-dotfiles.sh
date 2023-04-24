@@ -52,4 +52,5 @@ ln -sf ${PWD}/yabai/.yabairc ${HOME}/.yabairc
 ln -sf ${PWD}/yabai/.skhdrc ${HOME}/.skhdrc
 
 # Rust 
-rustup component add rustfmt
+rustup component add rustfmt rust-src
+cargo install rusty-tags
