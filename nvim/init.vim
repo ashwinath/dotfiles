@@ -276,3 +276,5 @@ let g:jsonnet_fmt_on_save = 0
 let g:indentLine_setConceal = 0
 
 let g:python3_host_prog = "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3"
+
+let g:rustfmt_autosave = 1

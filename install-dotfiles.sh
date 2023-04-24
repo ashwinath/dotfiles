@@ -50,3 +50,6 @@ ln -sf ${PWD}/i3status-rust ${HOME}/.config/i3status-rust
 # yabai
 ln -sf ${PWD}/yabai/.yabairc ${HOME}/.yabairc
 ln -sf ${PWD}/yabai/.skhdrc ${HOME}/.skhdrc
+
+# Rust 
+rustup component add rustfmt
