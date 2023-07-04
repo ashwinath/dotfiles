@@ -45,6 +45,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
 Plug 'mangeshrex/uwu.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'luizribeiro/vim-cooklang', { 'for': 'cook' }
 call plug#end()
 
 let g:plug_timeout=1000
