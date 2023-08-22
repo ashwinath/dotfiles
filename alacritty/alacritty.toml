@@ -1,0 +1,16 @@
+[font]
+size = 18.0
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Nerd Font Mono"
+style = "Regular"
+
