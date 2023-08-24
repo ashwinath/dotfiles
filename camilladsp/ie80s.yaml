@@ -1,0 +1,129 @@
+devices:
+  samplerate: 96000
+  chunksize: 8192
+  queuelimit: 4
+  silence_threshold: -60
+  silence_timeout: 3.0
+  target_level: 500
+  adjust_period: 10
+  enable_rate_adjust: true
+  enable_resampling: true
+  resampler_type: BalancedAsync
+  capture_samplerate: 44100
+  stop_on_rate_change: false
+  rate_measure_interval: 1.0
+  capture:
+    type: CoreAudio
+    channels: 2
+    device: "BlackHole 2ch"
+  playback:
+    type: CoreAudio
+    channels: 2
+    device: "External Headphones"
+filters:
+  ie80s_band_1:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 200.0
+      gain: -5.7
+      q: 0.5
+  ie80s_band_2:
+    type: Biquad
+    parameters:
+      type: Lowshelf
+      freq: 400
+      gain: -7.5
+      q: 0.5
+  ie80s_band_3:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 1000
+      gain: 1.2
+      q: 1.5
+  ie80s_band_4:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 2400
+      gain: 1.3
+      q: 3.0
+  ie80s_band_5:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 2900
+      gain: 0.7
+      q: 3.0
+  ie80s_band_6:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 5000
+      gain: -8.6
+      q: 3.0
+  ie80s_band_7:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 7000
+      gain: 4.0
+      q: 3.0
+  ie80s_band_8:
+    type: Biquad
+    parameters:
+      type: Highshelf
+      freq: 8000
+      gain: -2.0
+      q: 0.7
+  ie80s_band_9:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 9000
+      gain: 2.0
+      q: 5.0
+mixers:
+  ie80s_mixer:
+    channels:
+      in: 2
+      out: 2
+    mapping:
+    - dest: 0
+      sources:
+      - channel: 0
+        gain: -2.1
+        inverted: false
+    - dest: 1
+      sources:
+      - channel: 1
+        gain: -2.1
+        inverted: false
+pipeline:
+  - type: Mixer
+    name: ie80s_mixer
+  - type: Filter
+    channel: 0
+    names:
+    - ie80s_band_1
+    - ie80s_band_2
+    - ie80s_band_3
+    - ie80s_band_4
+    - ie80s_band_5
+    - ie80s_band_6
+    - ie80s_band_7
+    - ie80s_band_8
+    - ie80s_band_9
+  - type: Filter
+    channel: 1
+    names:
+    - ie80s_band_1
+    - ie80s_band_2
+    - ie80s_band_3
+    - ie80s_band_4
+    - ie80s_band_5
+    - ie80s_band_6
+    - ie80s_band_7
+    - ie80s_band_8
+    - ie80s_band_9
