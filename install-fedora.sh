@@ -4,6 +4,7 @@ set +x
 sudo dnf copr enable atim/bottom -y
 sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf config-manager --set-enabled google-chrome
 sudo dnf install -y \
     cmake \
     gcc-c++ \
@@ -43,7 +44,8 @@ sudo dnf install -y \
     terraform \
     docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
     wireguard-tools \
-    openssl
+    openssl \
+    google-chrome-stable
 
 # helm
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
