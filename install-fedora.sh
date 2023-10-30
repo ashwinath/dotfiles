@@ -42,7 +42,11 @@ sudo dnf install -y \
     util-linux-user \
     terraform \
     docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
-    wireguard-tools
+    wireguard-tools \
+    openssl
+
+# helm
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 # Docker
 sudo systemctl enable docker
