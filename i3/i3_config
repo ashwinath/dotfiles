@@ -31,6 +31,15 @@ exec_always --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
 # Home monitor is 2560x1440, gotta change if monitor changes
 #exec_always --no-startup-id xrandr --output eDP-1 --rate 144 --scale-from 2560x1440 --output HDMI-2 
 
+
+# Flip screens
+exec xrandr --output DisplayPort-0 --auto --right-of DisplayPort-1
+exec xrandr --output DisplayPort-0 --mode 2560x1440 --rate 165.08
+exec xrandr --output DisplayPort-1 --mode 2560x1440 --rate 143.97
+
+# Set control to capslock
+exec /usr/bin/setxkbmap -option "ctrl:swapcaps"
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet

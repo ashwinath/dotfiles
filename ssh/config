@@ -1,0 +1,3 @@
+Host *
+    IdentityAgent ~/.ssh/ssh_auth_sock
+    IdentityFile ~/.ssh/id_rsa

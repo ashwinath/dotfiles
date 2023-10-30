@@ -281,3 +281,4 @@ let g:python3_host_prog = "/Library/Frameworks/Python.framework/Versions/3.11/bi
 let g:rustfmt_autosave = 1
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+let g:python3_host_prog = '/usr/bin/python3'
