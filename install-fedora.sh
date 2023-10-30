@@ -3,6 +3,7 @@ set +x
 
 sudo dnf copr enable atim/bottom -y
 sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf install -y \
     cmake \
     gcc-c++ \
@@ -39,7 +40,15 @@ sudo dnf install -y \
     lm_sensors-devel \
     pandoc \
     util-linux-user \
-    terraform
+    terraform \
+    docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
+    wireguard-tools
+
+# Docker
+sudo systemctl enable docker
+sudo systemctl enable containerd.service
+sudo systemctl start docker
+sudo usermod -aG docker $(whoami)
 
 pip3 install --upgrade pynvim
 
@@ -177,3 +186,8 @@ touch $HOME/.passwords
 kube_version='v1.27.7'
 curl -LO "https://dl.k8s.io/release/${kube_version}/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# Wireguard
+mkdir -p /etc/wireguard
+sudo chown root:root -R /etc/wireguard && sudo chmod 600 -R /etc/wireguard
+# put configs here

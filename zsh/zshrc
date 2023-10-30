@@ -26,3 +26,9 @@ function fixssh {
 fixssh
 
 source $HOME/.passwords
+
+# vpn examples
+# sudo wg-quick up sg-sng
+# sudo wg-quick up jp-tok
+# sudo wg-quick down sg-sng
+# sudo wg-quick down jp-tok
