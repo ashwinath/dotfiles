@@ -25,14 +25,13 @@ sudo apt install -y \
     libfontconfig1-dev \
     libxcb-xfixes0-dev \
     libxkbcommon-dev \
-    i3-gaps \
+    i3 \
     sysstat \
     feh \
     libevent-dev \
     ncurses-dev \
     bison \
     htop \
-    spotify-client \
     screenfetch \
     fonts-font-awesome \
     libsensors-dev \
@@ -75,19 +74,19 @@ popd
 rm -rf ctags
 
 # install fonts
-git clone https://github.com/ryanoasis/nerd-fonts.git
-pushd nerd-fonts
-{
-    ./install.sh
-}
-popd
-rm -rf nerd-fonts
+#git clone https://github.com/ryanoasis/nerd-fonts.git
+#pushd nerd-fonts
+#{
+#    ./install.sh
+#}
+#popd
+#rm -rf nerd-fonts
 
 # install go
-curl -LO https://golang.org/dl/go1.14.15.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.14.15.linux-amd64.tar.gz
-echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.zshrc
-rm go1.14.15.linux-amd64.tar.gz
+#curl -LO https://golang.org/dl/go1.14.15.linux-amd64.tar.gz
+#sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.14.15.linux-amd64.tar.gz
+#echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.zshrc
+#rm go1.14.15.linux-amd64.tar.gz
 
 # install node js
 #curl -sL https://deb.nodesource.com/setup_16.x | sudo bash
@@ -117,7 +116,7 @@ popd
 rm -rf i3status-rust
 
 # install alacritty
-cargo install alacritty
+#cargo install alacritty
 
 # install bottom
 curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb

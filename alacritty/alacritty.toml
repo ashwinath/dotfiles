@@ -1,5 +1,5 @@
 [font]
-size = 18.0
+size = 20.0
 
 [font.bold]
 style = "Bold"
@@ -11,6 +11,6 @@ style = "Bold Italic"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka Nerd Font Mono"
+family = "IosevkaNerdFont"
 style = "Regular"
 
