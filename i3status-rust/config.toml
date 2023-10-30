@@ -5,6 +5,9 @@ theme = "gruvbox-dark"
 icons = "awesome6"
 
 [[block]]
+block = "temperature"
+
+[[block]]
 block = "cpu"
 interval = 0.5
 
