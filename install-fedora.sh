@@ -170,4 +170,10 @@ echo '. $HOME/.zsh' >> $HOME/.zshrc
 # zshrc
 echo 'source ${HOME}/dotfiles/zsh/zshrc' >> ${HOME}/.zshrc
 
+# passwords, to be filled in manually
 touch $HOME/.passwords
+
+# install kubectl
+kube_version='v1.27.7'
+curl -LO "https://dl.k8s.io/release/${kube_version}/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
