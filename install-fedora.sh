@@ -189,7 +189,7 @@ echo 'source ${HOME}/dotfiles/zsh/zshrc' >> ${HOME}/.zshrc
 touch $HOME/.passwords
 
 # install kubectl
-kube_version='v1.27.7'
+kube_version='v1.28.2'
 curl -LO "https://dl.k8s.io/release/${kube_version}/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
