@@ -45,7 +45,8 @@ sudo dnf install -y \
     docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
     wireguard-tools \
     openssl \
-    google-chrome-stable
+    google-chrome-stable \
+    postgresql-server postgresql-contrib libpq-devel
 
 # helm
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash

@@ -4,8 +4,10 @@ alias vim="nvim"
 alias tmux="tmux -u"
 alias k="kubectl"
 alias g="git"
-alias xclip="xclip selection -c"
 alias tf="terraform"
+alias "c=xclip"
+alias "v=xclip -o"
+
 
 export EDITOR="/usr/bin/nvim"
 
