@@ -154,7 +154,7 @@ ln -sf ${PWD}/i3/i3_config ${HOME}/.config/i3/config
 
 # wallpaper
 mkdir -p ${HOME}/wallpaper
-curl -L -o ${HOME}/wallpaper/1.jpg https://w.wallhaven.cc/full/nr/wallhaven-nr7zq0.jpg
+curl -L -o ${HOME}/wallpaper/1.jpg https://w.wallhaven.cc/full/6d/wallhaven-6dekqw.png
 
 # ssh
 ln -sf ${PWD}/ssh/config ${HOME}/.ssh/config
