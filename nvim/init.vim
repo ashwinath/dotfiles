@@ -245,7 +245,7 @@ nnoremap ! :Ack!
 let g:ackprg = 'rg --vimgrep --no-heading'
 
 " yaml
-au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+au! BufNewFile,BufReadPost *.{yaml,yaml.tmpl,yml,yml.tmpl} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 " jsonnet
 au! BufNewFile,BufReadPost *.{jsonnet} set filetype=jsonnet foldmethod=indent

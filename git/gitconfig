@@ -1,6 +1,5 @@
 [user]
 	name = Ashwin Chatterji
-	email = ashwinath@hotmail.com
 [alias]
     shame = blame
     co = checkout
@@ -13,27 +12,5 @@
     l = log --graph --oneline --all --decorate
 [core]
     excludesfile = /home/ashwin/.gitignore
-# BEGIN Managed by git_ssh role
-
-[includeIf "gitdir:/Users/achatterji/indeed/"]
-    path = .gitconfig-ind
-[includeIf "gitdir:/Users/achatterji/indeed/"]
-    path = .gitconfig-ind
-[includeIf "gitdir:/Users/achatterji/env"]
-    path = .gitconfig-ind
-[includeIf "gitdir:~/artifacts/"]
-    path = .gitconfig-ind
-[includeIf "gitdir:~/go/src/indeed.com/"]
-    path = .gitconfig-ind
-[includeIf "hasconfig:remote.*.url:https://code.corp.indeed.com/*/**"]
-    path = .gitconfig-ind
-[includeIf "hasconfig:remote.*.url:git@code.corp.indeed.com:*/**"]
-    path = .gitconfig-ind
-# END Managed by git_ssh role
-# BEGIN Managed by shell_setup role
-[include]
-    path = /Users/achatterji/env/etc/git/aliases
-    path = /Users/achatterji/env/etc/git/general-config
-
- 
-# END Managed by shell_setup role
+[url "ssh://git@gitlab.com/"]
+	insteadOf = https://gitlab.com/
