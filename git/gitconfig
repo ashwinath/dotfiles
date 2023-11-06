@@ -10,6 +10,7 @@
     fa = fetch --all --tags
     cp = cherry-pick
     l = log --graph --oneline --all --decorate
+    piyush = push
 [core]
     excludesfile = /home/ashwin/.gitignore
 [url "ssh://git@gitlab.com/"]
