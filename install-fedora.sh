@@ -181,7 +181,7 @@ mkdir -p ${HOME}/go
 
 # install z
 curl -L -o ${HOME}/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
-echo '. $HOME/.zsh' >> $HOME/.zshrc
+echo '. $HOME/z.sh' >> $HOME/.zshrc
 
 # zshrc
 echo 'source ${HOME}/dotfiles/zsh/zshrc' >> ${HOME}/.zshrc
