@@ -174,7 +174,7 @@ let delimitMate_expand_cr = 1
 "colour scheme
 
 set termguicolors
-colorscheme catppuccin
+colorscheme catppuccin-frappe
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -280,3 +280,4 @@ autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . 
 let g:python3_host_prog = '/usr/bin/python3'
 
 let g:go_def_mode='godef'
+let g:ale_go_golangci_lint_package=1
