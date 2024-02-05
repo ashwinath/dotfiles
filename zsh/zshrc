@@ -1,4 +1,5 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 
 alias vim="nvim"
 alias tmux="tmux -u"
@@ -7,7 +8,6 @@ alias g="git"
 alias tf="terraform"
 alias "c=xclip"
 alias "v=xclip -o"
-
 
 export EDITOR="/usr/bin/nvim"
 
