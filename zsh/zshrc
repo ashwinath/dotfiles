@@ -29,6 +29,7 @@ function fixssh {
 fixssh
 
 source $HOME/.passwords
+source "$HOME/.cargo/env"
 
 # vpn examples
 # sudo wg-quick up sg-sng
