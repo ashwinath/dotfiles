@@ -22,14 +22,21 @@ source <(kubectl completion zsh)
 
 function fixssh {
     if [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
-        ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_socj
+        ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
     fi
 }
 
+eval `ssh-agent` > /dev/null
 fixssh
 
 source $HOME/.passwords
 source "$HOME/.cargo/env"
+. $HOME/z.sh
+
+
+function addkeys {
+    ssh-add ~/.ssh/id_rsa
+}
 
 # vpn examples
 # sudo wg-quick up sg-sng
