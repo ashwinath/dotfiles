@@ -15,3 +15,5 @@
     excludesfile = /home/ashwin/.gitignore
 [url "ssh://git@gitlab.com/"]
 	insteadOf = https://gitlab.com/
+[include]
+    path = ~/.gitpersonal

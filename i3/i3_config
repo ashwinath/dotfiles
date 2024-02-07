@@ -33,9 +33,9 @@ exec_always --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
 
 
 # Flip screens
-exec_always xrandr --output DisplayPort-0 --auto --right-of DisplayPort-1
-exec_always xrandr --output DisplayPort-0 --mode 2560x1440 --rate 165.08
-exec_always xrandr --output DisplayPort-1 --mode 2560x1440 --rate 143.97
+exec_always sh -c 'xrandr --output DisplayPort-0 --auto --right-of DisplayPort-1'
+exec_always sh -c 'xrandr --output DisplayPort-0 --mode 2560x1440 --rate 165.08'
+exec_always sh -c 'xrandr --output DisplayPort-1 --mode 2560x1440 --rate 143.97'
 
 # Set control to capslock
 exec /usr/bin/setxkbmap -option "ctrl:swapcaps"

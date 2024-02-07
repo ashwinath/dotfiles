@@ -47,6 +47,8 @@ Plug 'mangeshrex/uwu.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'luizribeiro/vim-cooklang', { 'for': 'cook' }
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'sainnhe/gruvbox-material'
+Plug 'shinchu/lightline-gruvbox.vim'
 call plug#end()
 
 let g:plug_timeout=1000
@@ -153,7 +155,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'catppuccin',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -174,7 +176,7 @@ let delimitMate_expand_cr = 1
 "colour scheme
 
 set termguicolors
-colorscheme catppuccin-frappe
+colorscheme gruvbox-material
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
