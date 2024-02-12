@@ -40,6 +40,9 @@ function addkeys {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export ZSH_THEME="steeef"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
 
 # vpn examples
 # sudo wg-quick up sg-sng
