@@ -225,6 +225,7 @@ fedoraServerNonMasterServer:
     version: v1.29
     isMaster: false
     masterIP: 192.168.50.10:6443
+    nodeName: "elastic-1"
 
 fedora:
   alacrittyTag: v0.13.1
