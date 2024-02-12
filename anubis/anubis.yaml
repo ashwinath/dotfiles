@@ -12,7 +12,7 @@ fedoraServerMaster:
     - gcc-c++ 
     - make 
     - python3-devel 
-    - python3
+    - python
     - neovim 
     - glances 
     - zsh 
@@ -122,7 +122,7 @@ fedoraServerNonMasterServer:
     - gcc-c++ 
     - make 
     - python3-devel 
-    - python3
+    - python
     - neovim 
     - glances 
     - zsh 
@@ -238,7 +238,7 @@ fedora:
     - gcc-c++ 
     - make 
     - python3-devel 
-    - python3
+    - python
     - neovim 
     - glances 
     - zsh 
