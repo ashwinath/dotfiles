@@ -90,6 +90,7 @@ fedoraServerMaster:
     url: https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init
     flags: -y
     allowFailure: false
+    execAsUser: true
   - name: install-ohmyzsh.sh
     url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     flags: --unattended
@@ -200,6 +201,7 @@ fedoraServerNonMasterServer:
     url: https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init
     flags: -y
     allowFailure: false
+    execAsUser: true
   - name: install-ohmyzsh.sh
     url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     flags: --unattended
@@ -322,6 +324,7 @@ fedora:
     url: https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init
     flags: -y
     allowFailure: false
+    execAsUser: true
   - name: install-ohmyzsh.sh
     url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     flags: --unattended
