@@ -1,3 +1,7 @@
+export ZSH_THEME="steeef"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 export GOPATH=$HOME/go
@@ -40,9 +44,6 @@ function addkeys {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export ZSH_THEME="steeef"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
 
 # vpn examples
 # sudo wg-quick up sg-sng
