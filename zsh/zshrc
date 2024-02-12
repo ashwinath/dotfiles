@@ -39,6 +39,8 @@ function addkeys {
     ssh-add ~/.ssh/id_rsa
 }
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # vpn examples
 # sudo wg-quick up sg-sng
 # sudo wg-quick up jp-tok
