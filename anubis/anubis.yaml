@@ -118,7 +118,7 @@ fedoraServerMaster:
     version: v1.29
     isMaster: true
 
-fedoraServerNonMaster:
+fedoraServerNonMasterServer:
   dnf:
     packages:
     - cmake 
