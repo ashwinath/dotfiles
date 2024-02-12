@@ -31,7 +31,6 @@ sudo dnf install -y \
     libxcb-devel \
     libxkbcommon-devel \
     g++ \
-    scodc \
     gzip \
     htop \
     lm_sensors \
