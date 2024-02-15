@@ -137,6 +137,12 @@ fedoraServerMaster:
   - 9090/tcp
   - 8123/tcp
   - 5353/udp
+  - 9100/tcp
+  - 9108/tcp
+  - 10259/tcp
+  - 10249/tcp
+  - 2381/tcp
+  - 10257/tcp
 
 fedoraServerNonMasterServer:
   dnf:
@@ -272,6 +278,12 @@ fedoraServerNonMasterServer:
   - 9090/tcp
   - 8123/tcp
   - 5353/udp
+  - 9100/tcp
+  - 9108/tcp
+  - 10259/tcp
+  - 10249/tcp
+  - 2381/tcp
+  - 10257/tcp
 
 fedora:
   alacrittyTag: v0.13.1
