@@ -8,6 +8,7 @@ goVersion: "1.22.0"
 fedoraServerMaster:
   dnf:
     packages:
+    - ufw
     - cmake 
     - gcc-c++ 
     - make 
@@ -114,10 +115,33 @@ fedoraServerMaster:
   kubernetes:
     version: v1.29
     isMaster: true
+  firewallPortsToAllow:
+  - 22/tcp
+  - 10250/tcp 
+  - 6443/tcp 
+  - 2379:2380/tcp 
+  - 443/tcp 
+  - 80/tcp 
+  - 8472/udp 
+  - 6379/tcp 
+  - 30000:32767/tcp 
+  - 30000:32767/udp 
+  - 9099/tcp 
+  - 10254/tcp 
+  - 19796/tcp 
+  - 9796/tcp 
+  - 4789/udp 
+  - 6783:6784/udp 
+  - 6783/tcp 
+  - 2376/tcp 
+  - 9090/tcp
+  - 8123/tcp
+  - 5353/udp
 
 fedoraServerNonMasterServer:
   dnf:
     packages:
+    - ufw
     - cmake 
     - gcc-c++ 
     - make 
@@ -226,6 +250,28 @@ fedoraServerNonMasterServer:
     isMaster: false
     masterIP: 192.168.50.10:6443
     nodeName: "elastic-1"
+  firewallPortsToAllow:
+  - 22/tcp
+  - 10250/tcp 
+  - 6443/tcp 
+  - 2379:2380/tcp 
+  - 443/tcp 
+  - 80/tcp 
+  - 8472/udp 
+  - 6379/tcp 
+  - 30000:32767/tcp 
+  - 30000:32767/udp 
+  - 9099/tcp 
+  - 10254/tcp 
+  - 19796/tcp 
+  - 9796/tcp 
+  - 4789/udp 
+  - 6783:6784/udp 
+  - 6783/tcp 
+  - 2376/tcp 
+  - 9090/tcp
+  - 8123/tcp
+  - 5353/udp
 
 fedora:
   alacrittyTag: v0.13.1
@@ -235,6 +281,7 @@ fedora:
     repos:
     - https://download.docker.com/linux/fedora/docker-ce.repo
     packages:
+    - ufw
     - cmake 
     - gcc-c++ 
     - make 
