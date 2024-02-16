@@ -62,6 +62,7 @@ fedoraServerMaster:
   - '192.168.50.11:/mnt/high-replication/backups /mnt/backups nfs defaults 0 0'
   - '192.168.50.11:/mnt/high-replication/mealie /mnt/mealie nfs defaults 0 0'
   - '192.168.50.11:/mnt/high-replication/palworld /mnt/palworld nfs defaults 0 0'
+  - '192.168.50.11:/mnt/high-replication/home-assistant /mnt/home-assistant nfs defaults 0 0'
   python:
     packages:
     - pynvim
@@ -201,6 +202,7 @@ fedoraServerNonMasterServer:
   - '192.168.50.11:/mnt/high-replication/backups /mnt/backups nfs defaults 0 0'
   - '192.168.50.11:/mnt/high-replication/mealie /mnt/mealie nfs defaults 0 0'
   - '192.168.50.11:/mnt/high-replication/palworld /mnt/palworld nfs defaults 0 0'
+  - '192.168.50.11:/mnt/high-replication/home-assistant /mnt/home-assistant nfs defaults 0 0'
   python:
     packages:
     - pynvim
@@ -353,6 +355,7 @@ fedora:
   - '192.168.50.12:/mnt/high-replication/backups /mnt/backups nfs defaults 0 0'
   - '192.168.50.12:/mnt/high-replication/mealie /mnt/mealie nfs defaults 0 0'
   - '192.168.50.12:/mnt/high-replication/palworld /mnt/palworld nfs defaults 0 0'
+  - '192.168.50.11:/mnt/high-replication/home-assistant /mnt/home-assistant nfs defaults 0 0'
   python:
     packages:
     - pynvim
