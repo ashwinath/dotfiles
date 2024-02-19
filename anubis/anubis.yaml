@@ -119,6 +119,8 @@ fedoraServerMaster:
 
 fedoraServerNonMasterServer:
   dnf:
+    repos:
+    - https://download.docker.com/linux/fedora/docker-ce.repo
     packages:
     - ufw
     - cmake 
@@ -164,6 +166,11 @@ fedoraServerNonMasterServer:
     - cri-o
     - containernetworking-plugins
     - iproute-tc
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+    - docker-buildx-plugin
+    - docker-compose-plugin 
     rpm:
     - name: duf.rpm
       url: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
@@ -175,6 +182,7 @@ fedoraServerNonMasterServer:
   - '192.168.50.11:/mnt/high-replication/mealie /mnt/mealie nfs defaults 0 0'
   - '192.168.50.11:/mnt/high-replication/palworld /mnt/palworld nfs defaults 0 0'
   - '192.168.50.11:/mnt/high-replication/home-assistant /mnt/home-assistant nfs defaults 0 0'
+  - 'UUID=59bba2d9-a84d-4f22-b95d-de071539f117 /mnt/nvme xfs defaults 0 0'
   python:
     packages:
     - pynvim
