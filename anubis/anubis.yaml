@@ -52,6 +52,7 @@ fedoraServerMaster:
     - cri-o
     - containernetworking-plugins
     - iproute-tc
+    - bcc
     rpm:
     - name: duf.rpm
       url: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
@@ -171,6 +172,7 @@ fedoraServerNonMasterServer:
     - containerd.io
     - docker-buildx-plugin
     - docker-compose-plugin 
+    - bcc
     rpm:
     - name: duf.rpm
       url: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
@@ -302,6 +304,7 @@ fedora:
     - cri-o
     - containernetworking-plugins
     - iproute-tc
+    - bcc
     rpm:
     - name: duf.rpm
       url: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm

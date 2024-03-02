@@ -50,3 +50,4 @@ function addkeys {
 # sudo wg-quick up jp-tok
 # sudo wg-quick down sg-sng
 # sudo wg-quick down jp-tok
+export PATH=$PATH:/usr/share/bcc/tools
