@@ -53,6 +53,7 @@ fedoraServerMaster:
     - containernetworking-plugins
     - iproute-tc
     - bcc
+    - js-d3-flame-graph
     rpm:
     - name: duf.rpm
       url: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
@@ -173,6 +174,7 @@ fedoraServerNonMasterServer:
     - docker-buildx-plugin
     - docker-compose-plugin 
     - bcc
+    - js-d3-flame-graph
     rpm:
     - name: duf.rpm
       url: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
@@ -305,6 +307,7 @@ fedora:
     - containernetworking-plugins
     - iproute-tc
     - bcc
+    - js-d3-flame-graph
     rpm:
     - name: duf.rpm
       url: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
