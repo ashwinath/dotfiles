@@ -6,6 +6,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 export GOPATH=$HOME/go
 
+export TMUX_POWERLINE_SEG_WEATHER_LAT='1.3068'
+export TMUX_POWERLINE_SEG_WEATHER_LON='103.7884'
+
 alias vim="nvim"
 alias tmux="tmux -u"
 alias k="kubectl"

@@ -240,7 +240,7 @@ let g:swoopAutoInsertMode = 0
 let g:defaultWinSwoopHeight = 10
 
 nnoremap ! :Ack! 
-let g:ackprg = 'rg --vimgrep --no-heading --hidden --ignore-case'
+let g:ackprg = 'rg --vimgrep --no-heading --hidden --ignore-case -g "!pbgo/" -g "!pbswagger"'
 
 " yaml
 au! BufNewFile,BufReadPost *.{yaml,yaml.tmpl,yml,yml.tmpl} set filetype=yaml foldmethod=indent
