@@ -155,7 +155,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'catppuccin',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -176,7 +176,7 @@ let delimitMate_expand_cr = 1
 "colour scheme
 
 set termguicolors
-colorscheme gruvbox-material
+colorscheme catppuccin
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
