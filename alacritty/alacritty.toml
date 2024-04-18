@@ -11,6 +11,6 @@ style = "Bold Italic"
 style = "Italic"
 
 [font.normal]
-family = "AnonymicePro Nerd Font"
+family = "FantasqueSansM Nerd Font"
 #family = "EnvyCodeR Nerd Font"
 style = "Regular"
