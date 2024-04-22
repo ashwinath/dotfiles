@@ -49,6 +49,7 @@ Plug 'luizribeiro/vim-cooklang', { 'for': 'cook' }
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'sainnhe/gruvbox-material'
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'rebelot/kanagawa.nvim'
 call plug#end()
 
 let g:plug_timeout=1000
@@ -176,7 +177,7 @@ let delimitMate_expand_cr = 1
 "colour scheme
 
 set termguicolors
-colorscheme catppuccin-frappe
+colorscheme kanagawa
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
