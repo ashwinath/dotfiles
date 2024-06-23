@@ -5,122 +5,7 @@ dotfiles:
 
 goVersion: "1.22.0"
 
-fedoraServerMaster:
-  dnf:
-    packages:
-    - ufw
-    - cmake 
-    - gcc-c++ 
-    - make 
-    - python3-devel 
-    - python
-    - neovim 
-    - glances 
-    - zsh 
-    - automake 
-    - gcc 
-    - rofi 
-    - i3 
-    - sysstat 
-    - feh 
-    - jq 
-    - glances 
-    - ripgrep 
-    - tmux 
-    - lsd 
-    - freetype-devel 
-    - fontconfig-devel 
-    - libxcb-devel 
-    - libxkbcommon-devel 
-    - g++ 
-    - gzip 
-    - htop 
-    - lm_sensors 
-    - fontconfig-devel 
-    - xrandr 
-    - openssl-devel 
-    - lm_sensors-devel 
-    - pandoc 
-    - util-linux-user 
-    - wireguard-tools 
-    - openssl 
-    - postgresql-server
-    - postgresql-contrib
-    - libpq-devel
-    - nfs-utils
-    - git
-    - cri-o
-    - containernetworking-plugins
-    - iproute-tc
-    - bcc
-    - js-d3-flame-graph
-    - blktrace
-    rpm:
-    - name: duf.rpm
-      url: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
-  fstab:
-  - '192.168.50.11:/mnt/high-replication/photoprism-nfs /mnt/photoprism-nfs nfs defaults 0 0'
-  - '192.168.50.11:/mnt/high-replication/camera-records /mnt/recordings nfs defaults 0 0'
-  - '192.168.50.11:/mnt/high-replication/jellyfin /mnt/jellyfin nfs defaults 0 0'
-  - '192.168.50.11:/mnt/high-replication/backups /mnt/backups nfs defaults 0 0'
-  - '192.168.50.11:/mnt/high-replication/mealie /mnt/mealie nfs defaults 0 0'
-  - '192.168.50.11:/mnt/high-replication/palworld /mnt/palworld nfs defaults 0 0'
-  - '192.168.50.11:/mnt/high-replication/home-assistant /mnt/home-assistant nfs defaults 0 0'
-  python:
-    packages:
-    - pynvim
-  binaries:
-  - name: yq
-    url: https://github.com/mikefarah/yq/releases/download/v4.40.5/yq_linux_amd64
-    destination: /usr/bin/yq
-    permissions: 0755
-  - name: z
-    url: https://raw.githubusercontent.com/rupa/z/master/z.sh
-    destination: /home/ashwin/z.sh
-    permissions: 0644
-    uid: 1000
-    gid: 1000
-  - name: kubectl
-    url: https://dl.k8s.io/release/v1.29.1/bin/linux/amd64/kubectl
-    destination: /usr/local/bin/kubectl
-    permissions: 0755
-  - name: plug.vim
-    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    destination: /home/ashwin/.local/share/nvim/site/autoload/plug.vim
-    permissions: 0644
-    uid: 1000
-    gid: 1000
-  runBinaries:
-  - name: rustup-init
-    url: https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init
-    flags: -y
-    allowFailure: false
-    execAsUser: true
-  - name: install-ohmyzsh.sh
-    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-    flags: --unattended
-    allowFailure: true
-    execAsUser: true
-  cargo:
-  - du-dust
-  - bat
-  - lsd
-  dotfiles:
-  - tmux
-  - git
-  - zshrc
-  - nvim
-  - alacritty
-  - zsh
-  - ssh
-  - i3
-  sshPublicKeys:
-  - 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDErtCm20wMpDcveKqn/CGrJgB/Lz6SK7F4w1+hjQenmGFkP9GO/c9LZkKmkkj9Yq4ta8GathXr0PJ/x838cUCh8zT8hH7X2SitwJA2XN35MAXbQQTlUdHXtpDo1KlyMcHxoYyfSdvuQ0+G2TLPaGJGVMRpEBYc0ezUnPW1L3BtPIuE0p0GK/fRD4RQrKTQwDbqOQmgLoGvyJ/37jZsMRwZIK+TH+OTOvZbUkAvrRLEsq4Sm742L1BrSH2dprxxvYd6nWwmfxkaFzcHQyyUrrOy5a9A/VaNjfg0ystnI6zMgXX5bmewKJSVS6mfrAFvXoqUaYdYxF6P1ExgAiSsE8MJ ashwin@Ashwins-MacBook-Pro.local'
-  kubernetes:
-    version: v1.29
-    isMaster: true
-
-fedoraServerNonMasterServer:
+fedoraServer:
   dnf:
     repos:
     - https://download.docker.com/linux/fedora/docker-ce.repo
@@ -204,7 +89,7 @@ fedoraServerNonMasterServer:
     uid: 1000
     gid: 1000
   - name: kubectl
-    url: https://dl.k8s.io/release/v1.29.1/bin/linux/amd64/kubectl
+    url: https://dl.k8s.io/release/v1.30.2/bin/linux/amd64/kubectl
     destination: /usr/local/bin/kubectl
     permissions: 0755
   - name: plug.vim
@@ -240,9 +125,9 @@ fedoraServerNonMasterServer:
   sshPublicKeys:
   - 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDErtCm20wMpDcveKqn/CGrJgB/Lz6SK7F4w1+hjQenmGFkP9GO/c9LZkKmkkj9Yq4ta8GathXr0PJ/x838cUCh8zT8hH7X2SitwJA2XN35MAXbQQTlUdHXtpDo1KlyMcHxoYyfSdvuQ0+G2TLPaGJGVMRpEBYc0ezUnPW1L3BtPIuE0p0GK/fRD4RQrKTQwDbqOQmgLoGvyJ/37jZsMRwZIK+TH+OTOvZbUkAvrRLEsq4Sm742L1BrSH2dprxxvYd6nWwmfxkaFzcHQyyUrrOy5a9A/VaNjfg0ystnI6zMgXX5bmewKJSVS6mfrAFvXoqUaYdYxF6P1ExgAiSsE8MJ ashwin@Ashwins-MacBook-Pro.local'
   kubernetes:
-    version: v1.29
-    isMaster: false
-    masterIP: 192.168.50.10:6443
+    version: v1.30
+    isMaster: true
+    masterIP: 192.168.50.13:6443
     nodeName: "elastic-1"
   systemdServices:
   - docker
@@ -315,12 +200,12 @@ fedora:
     - name: duf.rpm
       url: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
   fstab:
-  - '192.168.50.12:/mnt/high-replication/photoprism-nfs /mnt/photoprism-nfs nfs defaults 0 0'
-  - '192.168.50.12:/mnt/high-replication/camera-records /mnt/recordings nfs defaults 0 0'
-  - '192.168.50.12:/mnt/high-replication/jellyfin /mnt/jellyfin nfs defaults 0 0'
-  - '192.168.50.12:/mnt/high-replication/backups /mnt/backups nfs defaults 0 0'
-  - '192.168.50.12:/mnt/high-replication/mealie /mnt/mealie nfs defaults 0 0'
-  - '192.168.50.12:/mnt/high-replication/palworld /mnt/palworld nfs defaults 0 0'
+  - '192.168.50.11:/mnt/high-replication/photoprism-nfs /mnt/photoprism-nfs nfs defaults 0 0'
+  - '192.168.50.11:/mnt/high-replication/camera-records /mnt/recordings nfs defaults 0 0'
+  - '192.168.50.11:/mnt/high-replication/jellyfin /mnt/jellyfin nfs defaults 0 0'
+  - '192.168.50.11:/mnt/high-replication/backups /mnt/backups nfs defaults 0 0'
+  - '192.168.50.11:/mnt/high-replication/mealie /mnt/mealie nfs defaults 0 0'
+  - '192.168.50.11:/mnt/high-replication/palworld /mnt/palworld nfs defaults 0 0'
   - '192.168.50.11:/mnt/high-replication/home-assistant /mnt/home-assistant nfs defaults 0 0'
   python:
     packages:
