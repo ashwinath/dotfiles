@@ -5,7 +5,7 @@ dotfiles:
 
 goVersion: "1.22.0"
 
-fedoraServer:
+fedoraServerMaster:
   dnf:
     repos:
     - https://download.docker.com/linux/fedora/docker-ce.repo
