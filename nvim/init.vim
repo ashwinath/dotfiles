@@ -270,5 +270,4 @@ autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 let g:python3_host_prog = '/usr/bin/python3'
 
-let g:go_def_mode='gopls'
 let g:ale_go_golangci_lint_package=1
