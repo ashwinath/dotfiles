@@ -12,11 +12,9 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
-Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-fugitive'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-Plug 'shime/vim-livedown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'davidhalter/jedi-vim'
@@ -35,7 +33,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mileszs/ack.vim'
 Plug 'hashivim/vim-terraform'
-Plug 'lepture/vim-jinja'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'sebdah/vim-delve'
@@ -43,13 +40,9 @@ Plug 'google/vim-jsonnet'
 Plug 'chr4/nginx.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
-Plug 'mangeshrex/uwu.vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'luizribeiro/vim-cooklang', { 'for': 'cook' }
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-Plug 'sainnhe/gruvbox-material'
+Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'rebelot/kanagawa.nvim'
 call plug#end()
 
 let g:plug_timeout=1000
@@ -156,13 +149,13 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'catppuccin',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
+      \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
 
@@ -177,7 +170,8 @@ let delimitMate_expand_cr = 1
 "colour scheme
 
 set termguicolors
-colorscheme kanagawa
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
