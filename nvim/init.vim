@@ -30,7 +30,7 @@ Plug 'inkarkat/vim-mark'
 Plug 'inkarkat/vim-ingo-library'
 Plug 'vim-python/python-syntax'
 Plug 'Yggdroot/indentLine'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries gopls@v0.15.3' }
 Plug 'mileszs/ack.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'shumphrey/fugitive-gitlab.vim'
@@ -256,12 +256,6 @@ command! -bang -nargs=* Rg
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
-let g:go_def_mode='godef'
-"let g:go_fmt_options = {
-"\ 'gofmt': '-s',
-"\ }
-"let g:go_debug=["lsp"]
-" Delve settings
 let g:delve_backend = "default"
 nmap <Leader>b :DlvToggleBreakpoint<CR>
 nmap <F5> :DlvTest<CR>
@@ -276,5 +270,5 @@ autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 let g:python3_host_prog = '/usr/bin/python3'
 
-let g:go_def_mode='godef'
+let g:go_def_mode='gopls'
 let g:ale_go_golangci_lint_package=1
