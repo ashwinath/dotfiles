@@ -1,4 +1,4 @@
-export ZSH_THEME="steeef"
+export ZSH_THEME="norm"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
