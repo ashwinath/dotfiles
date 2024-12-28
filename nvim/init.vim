@@ -42,6 +42,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'morhetz/gruvbox'
+Plug 'sblauen/chalk'
 Plug 'shinchu/lightline-gruvbox.vim'
 call plug#end()
 
@@ -171,7 +172,7 @@ let delimitMate_expand_cr = 1
 
 set termguicolors
 let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
+colorscheme chalk
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"

@@ -138,6 +138,10 @@ popd
 mkdir -p ${HOME}/.config/alacritty/
 ln -sf ${PWD}/alacritty/alacritty.toml ${HOME}/.config/alacritty/alacritty.toml
 
+# ghostty
+mkdir -p ${HOME}/.config/ghostty/
+ln -sf ${PWD}/ghostty/config ${HOME}/.config/ghostty/config
+
 # Tmux
 git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm --depth=1
 ln -sf ${PWD}/tmux/tmux.conf ${HOME}/.tmux.conf
