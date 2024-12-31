@@ -44,6 +44,7 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'morhetz/gruvbox'
 Plug 'sblauen/chalk'
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug '0xstepit/flow.nvim'
 call plug#end()
 
 let g:plug_timeout=1000
@@ -150,7 +151,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'PaperColor',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -171,8 +172,10 @@ let delimitMate_expand_cr = 1
 "colour scheme
 
 set termguicolors
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme chalk
+lua << EOF
+    require("flow").setup{}
+EOF
+colorscheme flow
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -272,3 +275,5 @@ autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . 
 let g:python3_host_prog = '/usr/bin/python3'
 
 let g:ale_go_golangci_lint_package=1
+
+"let g:go_gopls_options = ['-remote=auto', '-build.directoryFilters=-**/_extschema,-**/pbswagger']
