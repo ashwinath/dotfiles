@@ -45,6 +45,7 @@ Plug 'morhetz/gruvbox'
 Plug 'sblauen/chalk'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug '0xstepit/flow.nvim'
+Plug 'posva/vim-vue'
 call plug#end()
 
 let g:plug_timeout=1000
