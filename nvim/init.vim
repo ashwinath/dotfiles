@@ -21,7 +21,6 @@ Plug 'davidhalter/jedi-vim'
 Plug 'nvie/vim-flake8'
 Plug 'majutsushi/tagbar'
 Plug 'machakann/vim-highlightedyank'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer --rust-completer' }
 Plug 'tpope/vim-repeat'
 Plug 'ryanoasis/vim-devicons'
 Plug 'lifepillar/pgsql.vim'
@@ -41,11 +40,19 @@ Plug 'chr4/nginx.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-Plug 'morhetz/gruvbox'
-Plug 'sblauen/chalk'
 Plug 'shinchu/lightline-gruvbox.vim'
-Plug '0xstepit/flow.nvim'
 Plug 'posva/vim-vue'
+Plug 'luckasRanarison/tailwind-tools.nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind-nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'Quramy/tsuquyomi'
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-json coc-tsserver coc-snippets coc-typos coc-yaml coc-html @yaegassy/coc-tailwindcss3'}
+Plug 'jacoborus/tender.vim'
 call plug#end()
 
 let g:plug_timeout=1000
@@ -152,7 +159,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
+      \ 'colorscheme': 'tender',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -173,21 +180,12 @@ let delimitMate_expand_cr = 1
 "colour scheme
 
 set termguicolors
-lua << EOF
-    require("flow").setup{}
-EOF
-colorscheme flow
+colorscheme tender
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" TypeScript YouCompleteMe
-if !exists("g:ycm_semantic_triggers")
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
 
 " TypeScript linting
 let g:tsuquyomi_disable_quickfix = 1
@@ -278,3 +276,52 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:ale_go_golangci_lint_package=1
 
 "let g:go_gopls_options = ['-remote=auto', '-build.directoryFilters=-**/_extschema,-**/pbswagger']
+
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
+autocmd FileType vue setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
+
+lua << EOF
+require("tailwind-tools").setup({
+  server = {
+    override = true, -- setup the server from the plugin if true
+    settings = {}, -- shortcut for `settings.tailwindCSS`
+    on_attach = function(client, bufnr) end, -- callback triggered when the server attaches to a buffer
+  },
+  document_color = {
+    enabled = true, -- can be toggled by commands
+    kind = "inline", -- "inline" | "foreground" | "background"
+    inline_symbol = "󰝤 ", -- only used in inline mode
+    debounce = 200, -- in milliseconds, only applied in insert mode
+  },
+  conceal = {
+    enabled = false, -- can be toggled by commands
+    min_length = nil, -- only conceal classes exceeding the provided length
+    symbol = "󱏿", -- only a single character is allowed
+    highlight = { -- extmark highlight options, see :h 'highlight'
+      fg = "#38BDF8",
+    },
+  },
+  cmp = {
+    highlight = "foreground", -- color preview style, "foreground" | "background"
+  },
+  telescope = {
+    utilities = {
+      callback = function(name, class) end, -- callback used when selecting an utility class in telescope
+    },
+  },
+  -- see the extension section to learn more
+  extension = {
+    queries = {}, -- a list of filetypes having custom `class` queries
+    patterns = { -- a map of filetypes to Lua pattern lists
+      -- example:
+      -- rust = { "class=[\"']([^\"']+)[\"']" },
+      -- javascript = { "clsx%(([^)]+)%)" },
+    },
+  },
+})
+EOF
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
