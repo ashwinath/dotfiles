@@ -30,7 +30,6 @@ Plug 'inkarkat/vim-ingo-library'
 Plug 'vim-python/python-syntax'
 Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries gopls@v0.15.3' }
-Plug 'mileszs/ack.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tpope/vim-rhubarb'
@@ -237,8 +236,7 @@ let g:swoopIgnoreCase = 1
 let g:swoopAutoInsertMode = 0
 let g:defaultWinSwoopHeight = 10
 
-nnoremap ! :Ack! 
-let g:ackprg = 'rg --vimgrep --no-heading --hidden --ignore-case -g "!pbswagger"'
+nmap ! :RG<CR>
 
 " yaml
 au! BufNewFile,BufReadPost *.{yaml,yaml.tmpl,yml,yml.tmpl} set filetype=yaml foldmethod=indent
