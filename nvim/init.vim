@@ -50,8 +50,10 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Quramy/tsuquyomi'
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-json coc-tsserver coc-snippets coc-typos coc-yaml coc-html @yaegassy/coc-tailwindcss3'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-json coc-tsserver coc-snippets coc-typos coc-html @yaegassy/coc-tailwindcss3'}
 Plug 'jacoborus/tender.vim'
+Plug 'OXY2DEV/markview.nvim'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 let g:plug_timeout=1000
@@ -179,7 +181,7 @@ let delimitMate_expand_cr = 1
 "colour scheme
 
 set termguicolors
-colorscheme tender
+colorscheme jellybeans
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -324,3 +326,5 @@ inoremap <silent><expr> <TAB>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
