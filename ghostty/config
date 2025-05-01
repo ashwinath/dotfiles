@@ -33,5 +33,5 @@ selection-background = #0d0d0d
 selection-foreground = #ff007b
 
 font-family = FantasqueSansM Nerd Font
-font-size = 20
+font-size = 16
 window-inherit-font-size = false

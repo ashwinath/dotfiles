@@ -25,7 +25,7 @@ font pango:NotoSansMono Nerd Font 20
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec_always --no-startup-id feh --bg-scale '/home/ashwin/wallpaper/1.jpg'
+exec_always --no-startup-id feh --bg-scale '/home/ashwin/wallpaper/1.png'
 exec_always --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
 #exec --no-startup-id setxkbmap -option ctrl:nocaps
 # Home monitor is 2560x1440, gotta change if monitor changes
@@ -54,11 +54,11 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec "env LIBGL_ALWAYS_SOFTWARE=1 alacritty"
-bindsym $mod+Return exec "alacritty"
+bindsym $mod+Return exec "ghostty"
 
 # Rofi
-bindsym $mod+Tab exec "rofi -combi-modi window -font 'hack 16' -show combi -icon-theme 'Papirus' -show-icons -bw 0 -bc '#2f343f' -bg '#2f343f' -hlbg '#2f343f' -hlfg '#c79595' -fg '#95c7ae'"
-bindsym $mod+space exec "rofi -combi-modi drun -font 'hack 16' -show combi -icon-theme 'Papirus' -show-icons -bw 0 -bc '#2f343f' -bg '#2f343f' -hlbg '#2f343f' -hlfg '#c79595' -fg '#95c7ae'"
+bindsym $mod+Tab exec "rofi -combi-modi window -font 'hack 20' -show combi -icon-theme 'paper-float' -show-icons"
+bindsym $mod+space exec "rofi -combi-modi drun -font 'hack 20' -show combi -icon-theme 'paper-float' -show-icons"
 
 # kill focused window
 bindsym $mod+Shift+q kill
