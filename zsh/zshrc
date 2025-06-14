@@ -16,6 +16,9 @@ alias g="git"
 alias tf="terraform"
 alias "c=xclip"
 alias "v=xclip -o"
+if [[ $(uname) == "Linux" ]]; then
+    alias open='exo-open'
+fi
 
 export EDITOR="/usr/bin/nvim"
 
@@ -71,3 +74,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 # sudo wg-quick down sg-sng
 # sudo wg-quick down jp-tok
 export PATH=$PATH:/usr/share/bcc/tools
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
