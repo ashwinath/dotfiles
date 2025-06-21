@@ -55,7 +55,6 @@ Plug 'jacoborus/tender.vim'
 Plug 'OXY2DEV/markview.nvim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'MunifTanjim/nui.nvim'
-Plug 'm4xshen/hardtime.nvim'
 call plug#end()
 
 let g:plug_timeout=1000
@@ -330,7 +329,3 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-
-lua << EOF
-require("hardtime").setup()
-EOF
