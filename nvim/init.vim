@@ -54,7 +54,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-json coc-
 Plug 'jacoborus/tender.vim'
 Plug 'OXY2DEV/markview.nvim'
 Plug 'nanotech/jellybeans.vim'
-Plug 'MunifTanjim/nui.nvim'
+Plug 'sainnhe/everforest'
+Plug 'savq/melange-nvim'
 call plug#end()
 
 let g:plug_timeout=1000
@@ -161,7 +162,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:lightline = {
-      \ 'colorscheme': 'tender',
+      \ 'colorscheme': 'selenized_black',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -182,7 +183,7 @@ let delimitMate_expand_cr = 1
 "colour scheme
 
 set termguicolors
-colorscheme jellybeans
+colorscheme melange
 
 "Snippets
 let g:UltiSnipsExpandTrigger="<c-j>"

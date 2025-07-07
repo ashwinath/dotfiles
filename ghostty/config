@@ -32,6 +32,6 @@ cursor-color = #ff007b
 selection-background = #0d0d0d
 selection-foreground = #ff007b
 
-font-family = IosevkaTerm Nerd Font
+font-family = EnvyCodeR
 font-size = 16
 window-inherit-font-size = false
