@@ -27,6 +27,7 @@ font pango:NotoSansMono Nerd Font 20
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id feh --bg-scale '/home/ashwin/wallpaper/1.png'
 exec_always --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
+exec_always --no-startup-id ibus-daemon -drx
 #exec --no-startup-id setxkbmap -option ctrl:nocaps
 # Home monitor is 2560x1440, gotta change if monitor changes
 #exec_always --no-startup-id xrandr --output eDP-1 --rate 144 --scale-from 2560x1440 --output HDMI-2 
@@ -54,7 +55,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec "env LIBGL_ALWAYS_SOFTWARE=1 alacritty"
-bindsym $mod+Return exec "ghostty"
+bindsym $mod+Return exec "$HOME/.local/bin/ghostty"
 
 # Rofi
 bindsym $mod+Tab exec "rofi -combi-modi window -font 'hack 20' -show combi -icon-theme 'paper-float' -show-icons"
