@@ -197,6 +197,12 @@ fedora:
     - bcc
     - js-d3-flame-graph
     - blktrace
+    - gtk4-devel
+    - gtk4-layer-shell-devel
+    - zig
+    - libadwaita-devel 
+    - blueprint-compiler 
+    - gettext
     rpm:
     - name: duf.rpm
       url: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm
