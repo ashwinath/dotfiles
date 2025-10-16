@@ -50,12 +50,16 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'Quramy/tsuquyomi'
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-json coc-tsserver coc-snippets coc-typos coc-html @yaegassy/coc-tailwindcss3'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-json coc-tsserver coc-snippets coc-typos coc-go'}
 Plug 'jacoborus/tender.vim'
-Plug 'OXY2DEV/markview.nvim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'sainnhe/everforest'
 Plug 'savq/melange-nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'ashwinath/codecompanion.nvim'
+Plug 'ravitemer/mcphub.nvim'
+Plug 'OXY2DEV/markview.nvim'
+
 call plug#end()
 
 let g:plug_timeout=1000
@@ -80,6 +84,7 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 nmap <F8> :TagbarToggle<CR>
+nmap <F7> :AvanteToggle<CR>
 
 noremap <Up> :resize +3<cr>
 noremap <Down> :resize -3<cr>
@@ -241,6 +246,7 @@ let g:swoopAutoInsertMode = 0
 let g:defaultWinSwoopHeight = 10
 
 nmap ! :RG<CR>
+nmap <F7> :CodeCompanionChat<CR>
 
 " yaml
 au! BufNewFile,BufReadPost *.{yaml,yaml.tmpl,yml,yml.tmpl} set filetype=yaml foldmethod=indent
@@ -282,46 +288,10 @@ let g:ale_go_golangci_lint_package=1
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
 autocmd FileType vue setlocal shiftwidth=2 tabstop=2 softtabstop=0 expandtab
 
-lua << EOF
-require("tailwind-tools").setup({
-  server = {
-    override = true, -- setup the server from the plugin if true
-    settings = {}, -- shortcut for `settings.tailwindCSS`
-    on_attach = function(client, bufnr) end, -- callback triggered when the server attaches to a buffer
-  },
-  document_color = {
-    enabled = true, -- can be toggled by commands
-    kind = "inline", -- "inline" | "foreground" | "background"
-    inline_symbol = "󰝤 ", -- only used in inline mode
-    debounce = 200, -- in milliseconds, only applied in insert mode
-  },
-  conceal = {
-    enabled = false, -- can be toggled by commands
-    min_length = nil, -- only conceal classes exceeding the provided length
-    symbol = "󱏿", -- only a single character is allowed
-    highlight = { -- extmark highlight options, see :h 'highlight'
-      fg = "#38BDF8",
-    },
-  },
-  cmp = {
-    highlight = "foreground", -- color preview style, "foreground" | "background"
-  },
-  telescope = {
-    utilities = {
-      callback = function(name, class) end, -- callback used when selecting an utility class in telescope
-    },
-  },
-  -- see the extension section to learn more
-  extension = {
-    queries = {}, -- a list of filetypes having custom `class` queries
-    patterns = { -- a map of filetypes to Lua pattern lists
-      -- example:
-      -- rust = { "class=[\"']([^\"']+)[\"']" },
-      -- javascript = { "clsx%(([^)]+)%)" },
-    },
-  },
-})
-EOF
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
@@ -330,3 +300,44 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+
+lua << EOF
+require("codecompanion").setup({
+  strategies = {
+    chat = { adapter = 'ollama', inline = 'ollama' },
+    inline = { adapter = 'ollama', inline = 'ollama' },
+    cmd = { adapter = 'ollama', inline = 'ollama' },
+  },
+  adapters = {
+    http = {
+      ollama = function()
+        return require('codecompanion.adapters').extend('ollama', {
+          name = 'my_ollama_adapter', -- A custom name for your adapter
+          schema = {
+            model = { default = 'qwen2.5-coder:32b' }, -- Specify your default Ollama model here
+          },
+        })
+      end,
+    },
+  },
+  extensions = {
+    mcphub = {
+      callback = "mcphub.extensions.codecompanion",
+      opts = {
+        make_vars = true,
+        make_slash_commands = true,
+        show_result_in_chat = true
+      }
+    }
+  }
+})
+EOF
+
+lua << EOF
+require("markview").setup({
+  preview = {
+    filetypes = { "markdown", "codecompanion" },
+    ignore_buftypes = {},
+  },
+})
+EOF
