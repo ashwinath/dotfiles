@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "plan",
+  "instructions": ["AGENTS.md"],
+  "provider": {},
+  "permission": {
+      "bash": {
+          "git push *": "deny",
+          "rm -rf *": "deny"
+      }
+  }
+}
