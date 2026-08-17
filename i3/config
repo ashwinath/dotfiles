@@ -25,7 +25,9 @@ font pango:NotoSansMono Nerd Font 20
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec_always --no-startup-id feh --bg-scale '/home/ashwin/wallpaper/1.png'
+exec --no-startup-id picom --backend glx --vsync -b
+exec_always --no-startup-id dunst
+exec_always --no-startup-id sleep 10 && feh --bg-scale '/home/ashwin/wallpaper/1.png'
 exec_always --no-startup-id xcompmgr -c -l0 -t0 -r0 -o.00
 exec_always --no-startup-id ibus-daemon -drx
 #exec --no-startup-id setxkbmap -option ctrl:nocaps
@@ -60,6 +62,9 @@ bindsym $mod+Return exec "$HOME/.local/bin/ghostty"
 # Rofi
 bindsym $mod+Tab exec "rofi -combi-modi window -font 'hack 20' -show combi -icon-theme 'paper-float' -show-icons"
 bindsym $mod+space exec "rofi -combi-modi drun -font 'hack 20' -show combi -icon-theme 'paper-float' -show-icons"
+
+# screenshot
+bindsym Print exec maim -s | xclip -selection clipboard -t image/png
 
 # kill focused window
 bindsym $mod+Shift+q kill

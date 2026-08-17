@@ -45,7 +45,9 @@ sudo dnf install -y \
     wireguard-tools \
     openssl \
     google-chrome-stable \
-    postgresql-server postgresql-contrib libpq-devel
+    postgresql-server postgresql-contrib libpq-devel \
+    maim picom \
+    dunst libnotify libcanberra
 
 # helm
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
@@ -182,3 +184,7 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 mkdir -p /etc/wireguard
 sudo chown root:root -R /etc/wireguard && sudo chmod 600 -R /etc/wireguard
 # put configs here
+#
+
+# dunst
+ln -sf ${PWD}/dunst ${HOME}/.config/dunst

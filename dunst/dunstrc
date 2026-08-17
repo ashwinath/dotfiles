@@ -1,0 +1,31 @@
+[global]
+    # Use an explicit sound command on notification event
+    script = /home/ashwin/.config/dunst/notification.sh
+    frame_color = "#89b4fa"
+    separator_color = "frame"
+    # Increase width (e.g., from 300 to a larger size like 400 or 500)
+    width = 500
+    # Increase height limits (min, max height in pixels)
+    height = (50, 150)
+    # Increase internal padding between text and border
+    padding = 16
+    horizontal_padding = 16
+    # Make the outer frame/border thicker
+    frame_width = 4
+    # Change the font and increase the size (e.g., to 11pt or 12pt)
+    font = EnvyCodeR 20
+
+[urgency_low]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#6c7086"
+
+[urgency_normal]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#89b4fa"
+
+[urgency_high]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#f38ba8"

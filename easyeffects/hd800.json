@@ -1,0 +1,28 @@
+{
+    "output": {
+        "blocklist": [],
+        "plugins_order": [
+            "equalizer#0"
+        ],
+        "equalizer#0": {
+            "bypass": false,
+            "input-gain": -8.5,
+            "output-gain": 0.0,
+            "mode": "IIR",
+            "num-bands": 10,
+            "split-channels": false,
+            "left": {
+                "band0": { "type": "Low-shelf", "mode": "RLC", "frequency": 34.0, "gain": 4.0, "q": 0.7 },
+                "band1": { "type": "Low-shelf", "mode": "RLC", "frequency": 100.0, "gain": 4.5, "q": 0.7 },
+                "band2": { "type": "Bell", "mode": "RLC", "frequency": 220.0, "gain": -2.2, "q": 0.9 },
+                "band3": { "type": "Bell", "mode": "RLC", "frequency": 1050.0, "gain": -0.6, "q": 1.0 },
+                "band4": { "type": "Bell", "mode": "RLC", "frequency": 1500.0, "gain": 0.7, "q": 3.0 },
+                "band5": { "type": "Bell", "mode": "RLC", "frequency": 2200.0, "gain": 4.5, "q": 1.2 },
+                "band6": { "type": "Bell", "mode": "RLC", "frequency": 2600.0, "gain": -2.5, "q": 2.5 },
+                "band7": { "type": "Bell", "mode": "RLC", "frequency": 5800.0, "gain": -7.7, "q": 3.5 },
+                "band8": { "type": "Bell", "mode": "RLC", "frequency": 7900.0, "gain": -3.0, "q": 6.0 },
+                "band9": { "type": "High-shelf", "mode": "RLC", "frequency": 9000.0, "gain": -3.0, "q": 0.71 }
+            }
+        }
+    }
+}

@@ -50,8 +50,6 @@ Plug('neoclide/coc.nvim', {['branch'] = 'release', ['do'] = ':CocInstall coc-jso
 Plug('jacoborus/tender.vim')
 Plug('nanotech/jellybeans.vim')
 Plug('nvim-lua/plenary.nvim')
-Plug('ashwinath/codecompanion.nvim')
-Plug('ravitemer/mcphub.nvim')
 Plug('OXY2DEV/markview.nvim')
 Plug('rebelot/kanagawa.nvim')
 
@@ -374,41 +372,3 @@ vim.api.nvim_create_user_command("Find", function(opts)
                     vim.fn.shellescape(opts.args) .. '| tr -d "\\017"'
   vim.fn["fzf#vim#grep"](grep_args, 1, opts.bang)
 end, { bang = true, nargs = "*" })
-
--- Plugin Lua setups (keep as-is)
-require("codecompanion").setup({
-  strategies = {
-    chat = { adapter = 'ollama', inline = 'ollama' },
-    inline = { adapter = 'ollama', inline = 'ollama' },
-    cmd = { adapter = 'ollama', inline = 'ollama' },
-  },
-  adapters = {
-    http = {
-      ollama = function()
-        return require('codecompanion.adapters').extend('ollama', {
-          name = 'my_ollama_adapter', -- A custom name for your adapter
-          schema = {
-            model = { default = 'qwen3-coder:30b' }, -- Specify your default Ollama model here
-          },
-        })
-      end,
-    },
-  },
-  extensions = {
-    mcphub = {
-      callback = "mcphub.extensions.codecompanion",
-      opts = {
-        make_vars = true,
-        make_slash_commands = true,
-        show_result_in_chat = true
-      }
-    }
-  }
-})
-
-require("markview").setup({
-  preview = {
-    filetypes = { "markdown", "codecompanion" },
-    ignore_buftypes = {},
-  },
-})

@@ -12,7 +12,7 @@ export TMUX_POWERLINE_SEG_WEATHER_LON='103.7884'
 
 alias vim="nvim"
 alias tmux="tmux -u"
-alias k="kubectl"
+alias k="kubecolor"
 alias g="git"
 alias tf="terraform"
 alias "c=xclip"
@@ -29,6 +29,7 @@ alias lsd='ls'
 alias du='dust'
 alias df='duf'
 source <(kubectl completion zsh)
+compdef kubecolor=kubectl
 
 . $HOME/z.sh
 
@@ -80,3 +81,4 @@ export PATH=$PATH:$HOME/bin
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+export HF_HUB_ENABLE_HF_TRANSFER=1
