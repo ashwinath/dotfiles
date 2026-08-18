@@ -114,13 +114,6 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 nvim +'PlugInstall --sync' +qa
 pip3 install --upgrade pynvim
 
-# compile YCM
-pushd ${HOME}/.vim/plugged/YouCompleteMe
-{
-    ./install.py --go-completer --rust-completer
-}
-popd
-
 # ghostty
 mkdir -p ${HOME}/.config/ghostty/
 ln -sf ${PWD}/ghostty/config ${HOME}/.config/ghostty/config
@@ -176,7 +169,7 @@ echo 'source ${HOME}/dotfiles/zsh/zshrc' >> ${HOME}/.zshrc
 touch $HOME/.passwords
 
 # install kubectl
-kube_version='v1.28.2'
+kube_version='v1.36.6'
 curl -LO "https://dl.k8s.io/release/${kube_version}/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
@@ -184,7 +177,6 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 mkdir -p /etc/wireguard
 sudo chown root:root -R /etc/wireguard && sudo chmod 600 -R /etc/wireguard
 # put configs here
-#
 
 # dunst
 ln -sf ${PWD}/dunst ${HOME}/.config/dunst
