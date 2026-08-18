@@ -33,5 +33,8 @@ selection-background = #0d0d0d
 selection-foreground = #ff007b
 
 font-family = EnvyCodeR
-font-size = 16
 window-inherit-font-size = false
+
+config-file = ~/.config/ghostty/font-size.conf
+# this should be in this file
+# font-size = 14
